@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace {Namespace}.Web.Controllers.Api
 {
     [Route("api/{ModuleId}")]
-    public class {ModuleID}Controller : Controller
+    public class {ModuleId}Controller : Controller
     {
         // GET: api/{Namespace}
         /// <summary>

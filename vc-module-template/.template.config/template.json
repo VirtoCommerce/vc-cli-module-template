@@ -14,8 +14,8 @@
             "type": "parameter",
             "dataType": "string",
             "description": "Your company name",
-            "defaultValue": "VirtoCommerce",
-            "replaces":"{CompanyName}"
+            "defaultValue": "John Doe",
+            "replaces":"{Author}"
         },
         "CompanyName": {
             "type": "parameter",
@@ -24,70 +24,153 @@
             "defaultValue": "VirtoCommerce",
             "replaces":"{CompanyName}"
         },
-        "ModuleTitle": {
+        "ModuleName": {
             "type": "parameter",
             "dataType": "string",
             "description": "Your module name",
             "defaultValue": "newModule",
-            "replaces":"{CompanyName}"
+            "replaces":"{ModuleName}",
+            "fileRename": "{ModuleName}"
         },
         "PlatformVersion": {
             "type": "parameter",
             "dataType": "string",
-            "description": "PlatformVersion",
+            "description": "Required Platform Version",
             "defaultValue": "3.62.0",
             "replaces":"{PlatformVersion}"
         },
         "PlatformNuGetPackageVersion": {
             "type": "parameter",
             "dataType": "string",
-            "description": "PlatformNuGetPackageVersion",
+            "description": "Required Platform NuGet Package Version",
             "defaultValue": "3.62.0",
             "replaces":"{PlatformNuGetPackageVersion}"
         },
         "copyrightYear": {
             "type": "generated",
             "generator": "now",
-            "replaces": "{Year}",
             "parameters": {
               "format": "yyyy"
-            }
+            },
+            "replaces": "{Year}"
+        },
+        "joinedJsModuleId": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "ModuleName"
+                  },
+                  {
+                    "type": "const",
+                    "value": "Module"
+                  }
+                ],
+                "separator": ""
+            },
+            "replaces":"{JsModuleId}"
+        },
+        "joinedModuleId": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "ModuleName"
+                  },
+                  {
+                    "type": "const",
+                    "value": "Module"
+                  }
+                ],
+                "separator": ""
+            },
+            "replaces":"{ModuleId}",
+            "fileRename": "{ModuleId}"
+        },
+        "joinedModuleTitle": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "CompanyName"
+                  },
+                  {
+                    "type": "ref",
+                    "value": "ModuleName"
+                  },
+                  {
+                    "type": "const",
+                    "value": "extension module"
+                  }
+                ],
+                "separator": " "
+            },
+            "replaces":"{ModuleTitle}"
         },
         "joinedNamespace": {
             "type": "generated",
             "generator": "join",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "CompanyName"
+                  },
+                  {
+                    "type": "ref",
+                    "value": "ModuleName"
+                  }
+                ],
+                "separator": "."
+            },
             "replaces":"{Namespace}",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "CompanyName"
-                  },
-                  {
-                    "type": "ref",
-                    "value": "ModuleTitle"
-                  }
-                ],
-                "separator": "."
-              }
+            "fileRename": "{Namespace}"
         },
-        "joinedRename": {
+        "CoreProjectGuid": {
             "type": "generated",
-            "generator": "join",
-            "fileRename": "{Namespace}",
+            "generator": "guid",
             "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "CompanyName"
-                  },
-                  {
-                    "type": "ref",
-                    "value": "ModuleTitle"
-                  }
-                ],
-                "separator": "."
-              }
+                "format":"B"
+            },
+            "replaces":"{CoreProjectGuid}"
+        },
+        "DataProjectGuid": {
+            "type": "generated",
+            "generator": "guid",
+            "parameters": {
+                "format":"B"
+            },
+            "replaces":"{DataProjectGuid}"
+        },
+        "TestsProjectGuid": {
+            "type": "generated",
+            "generator": "guid",
+            "parameters": {
+                "format":"B"
+            },
+            "replaces":"{TestsProjectGuid}"
+        },
+        "WebProjectGuid": {
+            "type": "generated",
+            "generator": "guid",
+            "parameters": {
+                "format":"B"
+            },
+            "replaces":"{WebProjectGuid}"
+        },
+        "SolutionGuid": {
+            "type": "generated",
+            "generator": "guid",
+            "parameters": {
+                "format":"B"
+            },
+            "replaces":"{SolutionGuid}"
         }
     }
 }
