@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <id>{Namespace}</id>
+    <version>1.0.0</version>
+    <version-tag></version-tag>
+    <platformVersion>{PlatformVersion}</platformVersion>
+    <dependencies>
+<!--        <dependency id="VirtoCommerce.Core" version="3.0.0" /> -->
+    </dependencies>
+
+    <title>{ModuleTitle}</title>
+    <description>{ModuleTitle}</description>
+
+    <authors>
+        <author>{Author}</author>
+    </authors>
+    <owners>
+        <owner>{CompanyName}</owner>
+    </owners>
+
+    <assemblyFile>{Namespace}.Web.dll</assemblyFile>
+    <moduleType>{Namespace}.Web.Module, {Namespace}.Web</moduleType>
+
+    <releaseNotes>First version.</releaseNotes>
+    <copyright>Copyright © {Year} {CompanyName}. All rights reserved</copyright>
+    <tags>extension module</tags>
+
+</module>
+
+

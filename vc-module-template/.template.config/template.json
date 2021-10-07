@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Maksim Kopnov",
+    "classifications": [ "ecommerce", "platform", "virtocommerce", "virto", "commerce" ],
+    "identity": "VirtoCommerce3.Module",
+    "name": "Virto Commerce 3.x Module Template",
+    "shortName": "vc-module",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "symbols":{
+        "Author": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "Your company name",
+            "defaultValue": "VirtoCommerce",
+            "replaces":"{CompanyName}"
+        },
+        "CompanyName": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "Your company name",
+            "defaultValue": "VirtoCommerce",
+            "replaces":"{CompanyName}"
+        },
+        "ModuleTitle": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "Your module name",
+            "defaultValue": "newModule",
+            "replaces":"{CompanyName}"
+        },
+        "PlatformVersion": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "PlatformVersion",
+            "defaultValue": "3.62.0",
+            "replaces":"{PlatformVersion}"
+        },
+        "PlatformNuGetPackageVersion": {
+            "type": "parameter",
+            "dataType": "string",
+            "description": "PlatformNuGetPackageVersion",
+            "defaultValue": "3.62.0",
+            "replaces":"{PlatformNuGetPackageVersion}"
+        },
+        "copyrightYear": {
+            "type": "generated",
+            "generator": "now",
+            "replaces": "{Year}",
+            "parameters": {
+              "format": "yyyy"
+            }
+        },
+        "joinedNamespace": {
+            "type": "generated",
+            "generator": "join",
+            "replaces":"{Namespace}",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "CompanyName"
+                  },
+                  {
+                    "type": "ref",
+                    "value": "ModuleTitle"
+                  }
+                ],
+                "separator": "."
+              }
+        },
+        "joinedRename": {
+            "type": "generated",
+            "generator": "join",
+            "fileRename": "{Namespace}",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "CompanyName"
+                  },
+                  {
+                    "type": "ref",
+                    "value": "ModuleTitle"
+                  }
+                ],
+                "separator": "."
+              }
+        }
+    }
+}
