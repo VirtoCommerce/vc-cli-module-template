@@ -13,10 +13,11 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
+     <NoDefaultExcludes>true</NoDefaultExcludes>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="vc-module-template\**" Exclude="vc-module-template\**\bin\**;vc-module-template\**\obj\**" />
+    <Content Include="vc-module-template\**"/>
     <Compile Remove="**\*" />
   </ItemGroup>
 
