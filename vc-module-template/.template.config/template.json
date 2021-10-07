@@ -137,40 +137,80 @@
             "generator": "guid",
             "parameters": {
                 "format":"B"
-            },
-            "replaces":"{CoreProjectGuid}"
+            }
         },
         "DataProjectGuid": {
             "type": "generated",
             "generator": "guid",
             "parameters": {
                 "format":"B"
-            },
-            "replaces":"{DataProjectGuid}"
+            }
         },
         "TestsProjectGuid": {
             "type": "generated",
             "generator": "guid",
             "parameters": {
                 "format":"B"
-            },
-            "replaces":"{TestsProjectGuid}"
+            }
         },
         "WebProjectGuid": {
             "type": "generated",
             "generator": "guid",
             "parameters": {
                 "format":"B"
-            },
-            "replaces":"{WebProjectGuid}"
+            }
         },
         "SolutionGuid": {
             "type": "generated",
             "generator": "guid",
             "parameters": {
                 "format":"B"
+            }
+        },
+        "CoreProjectGuidUpper":{
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+              "source":"CoreProjectGuid",
+              "toLower": false
             },
-            "replaces":"{SolutionGuid}"
+            "replaces":"CoreProjectGuid"
+        },
+        "DataProjectGuidUpper":{
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+              "source":"DataProjectGuid",
+              "toLower": false
+            },
+            "replaces":"DataProjectGuid"
+        },
+        "TestsProjectGuidUpper":{
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+              "source":"TestsProjectGuid",
+              "toLower": false
+            },
+            "replaces":"TestsProjectGuid"
+        },
+        "WebProjectGuidUpper":{
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+              "source":"WebProjectGuid",
+              "toLower": false
+            },
+            "replaces":"WebProjectGuid"
+        },
+        "SolutionGuidUpper":{
+            "type": "generated",
+            "generator": "casing",
+            "parameters": {
+              "source":"SolutionGuid",
+              "toLower": false
+            },
+            "replaces":"SolutionGuid"
         }
     }
 }
