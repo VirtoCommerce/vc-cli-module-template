@@ -1,0 +1,57 @@
+name: Module template CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'docs/**'
+      - 'build/**'
+      - 'README.md'
+      - 'LICENSE'
+    branches:
+      [main, dev]
+  pull_request:
+    branches:
+      [dev]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - 'LICENSE'
+    
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_NAME: 'VirtoCommerce.Module.Template.1.0.0-alpha.1.nupkg'
+      NUGET_KEY: ${{ secrets.NUGET_KEY }}
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Install VirtoCommerce.GlobalTool
+        uses: VirtoCommerce/vc-github-actions/setup-vcbuild@master
+
+      - name: Pack NuGet package
+        run: dotnet pack -o artifacts
+
+      - name: Install NuGet locally
+        run: |
+          cd artifacts
+          dotnet new -i ${{ env.PACKAGE_NAME }}
+
+      - name: Create new module solution from template
+        run: dotnet new vc-module
+
+      - name: New module test build
+        run: |
+          ls -l
+          cd vc-module-newModule
+          ls -l
+          vc-build Compile
+
+      - name: Publish Nuget
+        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
+        uses: VirtoCommerce/vc-github-actions/publish-nuget@master
+
