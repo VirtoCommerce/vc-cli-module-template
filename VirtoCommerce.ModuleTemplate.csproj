@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0-alpha.1</PackageVersion>
+    <PackageId>VirtoCommerce.Module.Template</PackageId>
+    <Title>VirtoCommerce Module Template</Title>
+    <Authors>Maksim Kopnov</Authors>
+    <Description>Virto Commerce 3.x Module Template.</Description>
+    <PackageTags>dotnet-new;templates;VirtoCommerce</PackageTags>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="vc-module-template\**" Exclude="vc-module-template\**\bin\**;vc-module-template\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>
