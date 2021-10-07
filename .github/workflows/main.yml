@@ -46,12 +46,12 @@ jobs:
 
       - name: New module test build
         run: |
-          ls -l
           cd vc-module-newModule
-          ls -l
           vc-build Compile
 
       - name: Publish Nuget
-        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
-        uses: VirtoCommerce/vc-github-actions/publish-nuget@master
+        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') }}
+        run: |
+          cd artifacts
+          dotnet nuget push ${{ env.PACKAGE_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
 
