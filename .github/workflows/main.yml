@@ -23,12 +23,25 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     env:
-      PACKAGE_NAME: 'VirtoCommerce.Module.Template.1.0.0-alpha.1.nupkg'
+      PACKAGE_NAME: 'VirtoCommerce.Module.Template'
+      PACKAGE_VERSION: '1.0-alpha.2'
+      NUGET_NAME: ''
       NUGET_KEY: ${{ secrets.NUGET_KEY }}
 
     steps:
 
       - uses: actions/checkout@v2
+
+      - uses: kzrnm/get-net-sdk-project-versions-action@v1
+        id: get-version
+        with:
+          proj-path: 'VirtoCommerce.ModuleTemplate.csproj'
+
+      - name: Set NUGET_NAME variable
+        run: |
+          echo "NUGET_NAME=${{env.PACKAGE_NAME}}.${{steps.get-version.outputs.package-version}}.nupkg" >> $GITHUB_ENV
+
+      - run: echo "${{env.NUGET_NAME}}"
 
       - name: Install VirtoCommerce.GlobalTool
         uses: VirtoCommerce/vc-github-actions/setup-vcbuild@master
@@ -38,8 +51,7 @@ jobs:
 
       - name: Install NuGet locally
         run: |
-          cd artifacts
-          dotnet new -i ${{ env.PACKAGE_NAME }}
+          dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
 
       - name: Create new module solution from template
         run: dotnet new vc-module
@@ -52,6 +64,5 @@ jobs:
       - name: Publish Nuget
         if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
         run: |
-          cd artifacts
-          dotnet nuget push ${{ env.PACKAGE_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+          dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
 
