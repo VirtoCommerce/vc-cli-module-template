@@ -25,6 +25,7 @@ jobs:
     env:
       PACKAGE_NAME: 'VirtoCommerce.Module.Template'
       PACKAGE_VERSION: '1.0-alpha.2'
+      PROJ_PATH: 'VirtoCommerce.ModuleTemplate.csproj'
       NUGET_NAME: ''
       NUGET_KEY: ${{ secrets.NUGET_KEY }}
 
@@ -35,17 +36,14 @@ jobs:
           fetch-depth: 0
 
       - name: Get changed files
-        id: changes
+        id: changed-files
         run:  | 
           echo '::set-output name=all::$(git show --pretty="" --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)'
-
-      - name: Show changed files
-        run:  echo ${{ steps.changes.outputs.all}}
 
       - uses: kzrnm/get-net-sdk-project-versions-action@v1
         id: get-version
         with:
-          proj-path: 'VirtoCommerce.ModuleTemplate.csproj'
+          proj-path: ${{ env.PROJ_PATH }}
 
       - name: Set NUGET_NAME variable
         run: |
@@ -53,23 +51,23 @@ jobs:
 
       - run: echo "${{env.NUGET_NAME}}"
 
-      # - name: Pack NuGet package
-      #   run: dotnet pack -o artifacts
+      - name: Pack NuGet package
+        run: dotnet pack -o artifacts
 
-      # - name: Install NuGet locally
-      #   run: |
-      #     dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
+      - name: Install NuGet locally
+        run: |
+          dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
 
-      # - name: Create new module solution from template
-      #   run: dotnet new vc-module
+      - name: Create new module solution from template
+        run: dotnet new vc-module
 
-      # - name: New module test build
-      #   run: |
-      #     cd vc-module-newModule
-      #     vc-build Compile
+      - name: New module test build
+        run: |
+          cd vc-module-newModule
+          vc-build Compile
 
-      # - name: Publish Nuget
-      #   if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
-      #   run: |
-      #     dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      - name: Publish Nuget
+        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && contains(steps.changed-files.outputs.all, env.PROJ_PATH ) }}
+        run: |
+          dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
 
