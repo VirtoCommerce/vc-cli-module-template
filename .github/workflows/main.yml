@@ -31,6 +31,16 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changes
+        run:  | 
+          echo '::set-output name=all::$(git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)'
+
+      - name: Show changed files
+        run:  echo ${{ steps.changes.outputs.all}}
 
       - uses: kzrnm/get-net-sdk-project-versions-action@v1
         id: get-version
@@ -43,26 +53,23 @@ jobs:
 
       - run: echo "${{env.NUGET_NAME}}"
 
-      - name: Install VirtoCommerce.GlobalTool
-        uses: VirtoCommerce/vc-github-actions/setup-vcbuild@master
+      # - name: Pack NuGet package
+      #   run: dotnet pack -o artifacts
 
-      - name: Pack NuGet package
-        run: dotnet pack -o artifacts
+      # - name: Install NuGet locally
+      #   run: |
+      #     dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
 
-      - name: Install NuGet locally
-        run: |
-          dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
+      # - name: Create new module solution from template
+      #   run: dotnet new vc-module
 
-      - name: Create new module solution from template
-        run: dotnet new vc-module
+      # - name: New module test build
+      #   run: |
+      #     cd vc-module-newModule
+      #     vc-build Compile
 
-      - name: New module test build
-        run: |
-          cd vc-module-newModule
-          vc-build Compile
-
-      - name: Publish Nuget
-        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
-        run: |
-          dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      # - name: Publish Nuget
+      #   if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
+      #   run: |
+      #     dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
 
