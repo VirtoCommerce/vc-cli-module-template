@@ -25,7 +25,9 @@ where --ModuleName your module name, --Author your name and --CompanyName your c
 * `vc-module-CustomerReviews` folder with module solution will be created
 * PlatformVersion and PlatformNuGetPackageVersion parameters have "3.62.0" "3.62.0" default values respectively. You can skip these parameters if you use default versions
 
-## How to install template locally
+## How to contribute
+
+### Install template locally
 
 * Open Windows PowerShell CMD
 * Clone repository
@@ -46,7 +48,7 @@ cd vc-cli-module-template
 dotnet new -i vc-module-template
 ```
 
-## How to uninstall locally installed template
+### How to uninstall locally installed template
 
 * Run command
 
