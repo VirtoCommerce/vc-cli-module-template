@@ -9,7 +9,7 @@
       "language": "C#",
       "type": "project"
     },
-    "symbols":{
+    "symbols": {
         "Author": {
             "type": "parameter",
             "dataType": "string",
@@ -72,25 +72,6 @@
             },
             "replaces":"{JsModuleId}"
         },
-        "joinedModuleId": {
-            "type": "generated",
-            "generator": "join",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "ModuleName"
-                  },
-                  {
-                    "type": "const",
-                    "value": "Module"
-                  }
-                ],
-                "separator": ""
-            },
-            "replaces":"{ModuleId}",
-            "fileRename": "{ModuleId}"
-        },
         "joinedModuleTitle": {
             "type": "generated",
             "generator": "join",
@@ -113,6 +94,25 @@
             },
             "replaces":"{ModuleTitle}"
         },
+        "joinedModuleId": {
+            "type": "generated",
+            "generator": "join",
+            "parameters": {
+                "symbols": [
+                  {
+                    "type": "ref",
+                    "value": "ModuleName"
+                  },
+                  {
+                    "type": "const",
+                    "value": "Module"
+                  }
+                ],
+                "separator": ""
+            },
+            "fileRename": "{ModuleId}",
+            "replaces":"{ModuleId}"
+        },
         "joinedNamespace": {
             "type": "generated",
             "generator": "join",
@@ -129,8 +129,8 @@
                 ],
                 "separator": "."
             },
-            "replaces":"{Namespace}",
-            "fileRename": "{Namespace}"
+            "fileRename": "{Namespace}",
+            "replaces":"{Namespace}"
         },
         "CoreProjectGuid": {
             "type": "generated",
