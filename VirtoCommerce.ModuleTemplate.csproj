@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.0-alpha.3</PackageVersion>
+    <PackageVersion>1.0.0-alpha.4</PackageVersion>
     <PackageId>VirtoCommerce.Module.Template</PackageId>
     <Title>VirtoCommerce Module Template</Title>
-    <Authors>Maksim Kopnov</Authors>
+    <Authors>VirtoWay</Authors>
     <Description>Virto Commerce 3.x Module Template.</Description>
     <PackageTags>dotnet-new;templates;VirtoCommerce</PackageTags>
     <TargetFramework>netcoreapp3.1</TargetFramework>

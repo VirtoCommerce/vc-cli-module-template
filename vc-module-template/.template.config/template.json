@@ -1,6 +1,6 @@
 {
     "$schema": "http://json.schemastore.org/template",
-    "author": "Maksim Kopnov",
+    "author": "VirtoWay",
     "classifications": [ "ecommerce", "platform", "virtocommerce", "virto", "commerce" ],
     "identity": "VirtoCommerce3.Module",
     "name": "Virto Commerce 3.x Module Template",
@@ -36,14 +36,14 @@
             "type": "parameter",
             "dataType": "string",
             "description": "Required Platform Version",
-            "defaultValue": "3.62.0",
+            "defaultValue": "3.84.0",
             "replaces":"{PlatformVersion}"
         },
         "PlatformNuGetPackageVersion": {
             "type": "parameter",
             "dataType": "string",
             "description": "Required Platform NuGet Package Version",
-            "defaultValue": "3.62.0",
+            "defaultValue": "3.84.0",
             "replaces":"{PlatformNuGetPackageVersion}"
         },
         "copyrightYear": {
