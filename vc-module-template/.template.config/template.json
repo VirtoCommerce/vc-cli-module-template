@@ -13,7 +13,7 @@
         "Author": {
             "type": "parameter",
             "dataType": "string",
-            "description": "Your company name",
+            "description": "Your name",
             "defaultValue": "John Doe",
             "replaces":"{Author}"
         },
