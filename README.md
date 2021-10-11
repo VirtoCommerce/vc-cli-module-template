@@ -7,7 +7,7 @@
 * Run command
 
 ```dos
-dotnet new --install VirtoCommerce.Module.Template::1.0.0-alpha.1
+dotnet new --install VirtoCommerce.Module.Template::1.0.0-alpha.3
 ```
 
 ## How to create a new module from template
@@ -24,6 +24,14 @@ where --ModuleName your module name, --Author your name and --CompanyName your c
 
 * `vc-module-CustomerReviews` folder with module solution will be created
 * PlatformVersion and PlatformNuGetPackageVersion parameters have "3.62.0" "3.62.0" default values respectively. You can skip these parameters if you use default versions
+
+## How to uninstall template installed from NuGet repository
+
+* Run command
+
+```dos
+dotnet new -u VirtoCommerce.Module.Template
+```
 
 ## How to contribute
 

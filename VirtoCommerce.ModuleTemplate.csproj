@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.0-alpha.2</PackageVersion>
+    <PackageVersion>1.0.0-alpha.3</PackageVersion>
     <PackageId>VirtoCommerce.Module.Template</PackageId>
     <Title>VirtoCommerce Module Template</Title>
     <Authors>Maksim Kopnov</Authors>

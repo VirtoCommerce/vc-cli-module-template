@@ -28,17 +28,32 @@ jobs:
       PROJ_PATH: 'VirtoCommerce.ModuleTemplate.csproj'
       NUGET_NAME: ''
       NUGET_KEY: ${{ secrets.NUGET_KEY }}
+      FORCE_NUGET: 'false'
 
     steps:
 
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+            fetch-depth: 0
+
+      - name: Install VirtoCommerce.GlobalTool
+        uses: VirtoCommerce/vc-github-actions/setup-vcbuild@master
 
       - name: Get changed files
         id: changed-files
         run:  | 
           echo '::set-output name=all::$(git show --pretty="" --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)'
+
+      - name: Set FORCE_NUGET
+        run:  | 
+          string=${{ steps.changed-files.outputs.all }}
+          if [[ $string == *"${{ env.PROJ_PATH }}"* ]]; then
+            echo "FORCE_NUGET=true" >> $GITHUB_ENV
+          fi
+
+      - name: Show FORCE_NUGET
+        run:  | 
+          echo ${{ env.FORCE_NUGET }}
 
       - uses: kzrnm/get-net-sdk-project-versions-action@v1
         id: get-version
@@ -67,7 +82,8 @@ jobs:
           vc-build Compile
 
       - name: Publish Nuget
-        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && contains(steps.changed-files.outputs.all, env.PROJ_PATH ) }}
+        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && contains( env.FORCE_NUGET, 'true' ) }}
+#        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name != 'workflow_dispatch' }}
         run: |
           dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
 
