@@ -46,6 +46,12 @@
             "defaultValue": "3.84.0",
             "replaces":"{PlatformNuGetPackageVersion}"
         },
+        "KebabModuleName": {
+            "type":"derived",
+            "valueSource": "ModuleName",
+            "valueTransform": "kebab",
+            "fileRename": "{KebabModuleName}"
+        },
         "copyrightYear": {
             "type": "generated",
             "generator": "now",
@@ -211,6 +217,11 @@
               "toLower": false
             },
             "replaces":"SolutionGuid"
+        }
+    },
+    "forms": {
+        "kebab":{
+            "identifier": "kebabCase"
         }
     }
 }
