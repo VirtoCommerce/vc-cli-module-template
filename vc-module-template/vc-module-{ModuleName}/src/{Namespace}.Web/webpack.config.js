@@ -1,5 +1,5 @@
-const glob = require("glob");
-const path = require("path");
+const glob = require('glob');
+const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -26,7 +26,7 @@ module.exports = [
             rules: [
                 {
                     test: /\.css$/,
-                    loaders: [MiniCssExtractPlugin.loader, "css-loader"]
+                    use: [MiniCssExtractPlugin.loader, 'css-loader'],
                 }
             ]
         },
