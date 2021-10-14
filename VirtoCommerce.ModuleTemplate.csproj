@@ -10,6 +10,7 @@
     <PackageTags>dotnet-new;templates;VirtoCommerce</PackageTags>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
+
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
