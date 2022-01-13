@@ -19,8 +19,8 @@ namespace {Namespace}.Web
         {
             // database initialization
             var configuration = serviceCollection.BuildServiceProvider().GetRequiredService<IConfiguration>();
-            var connectionString = configuration.GetConnectionString("VirtoCommerce.{ModuleId}") ?? configuration.GetConnectionString("VirtoCommerce");
-            serviceCollection.AddDbContext<{ModuleId}DbContext>(options => options.UseSqlServer(connectionString));
+            var connectionString = configuration.GetConnectionString("VirtoCommerce.{ModuleName}") ?? configuration.GetConnectionString("VirtoCommerce");
+            serviceCollection.AddDbContext<{ModuleName}DbContext>(options => options.UseSqlServer(connectionString));
         }
 
         public void PostInitialize(IApplicationBuilder appBuilder)
@@ -34,7 +34,7 @@ namespace {Namespace}.Web
             permissionsProvider.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions.Select(x =>
                 new Permission()
                 {
-                    GroupName = "{ModuleId}",
+                    GroupName = "{ModuleName}",
                     ModuleId = ModuleInfo.Id,
                     Name = x
                 }).ToArray());
@@ -42,7 +42,7 @@ namespace {Namespace}.Web
             // Ensure that any pending migrations are applied
             using (var serviceScope = appBuilder.ApplicationServices.CreateScope())
             {
-                using (var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleId}DbContext>())
+                using (var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>())
                 {
                     dbContext.Database.EnsureCreated();
                     dbContext.Database.Migrate();

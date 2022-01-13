@@ -9,11 +9,11 @@ namespace {Namespace}.Core
         {
             public static class Permissions
             {
-                public const string Access = "{JsModuleId}:access";
-                public const string Create = "{JsModuleId}:create";
-                public const string Read = "{JsModuleId}:read";
-                public const string Update = "{JsModuleId}:update";
-                public const string Delete = "{JsModuleId}:delete";
+                public const string Access = "{ModuleName}:access";
+                public const string Create = "{ModuleName}:create";
+                public const string Read = "{ModuleName}:read";
+                public const string Update = "{ModuleName}:update";
+                public const string Delete = "{ModuleName}:delete";
 
                 public static string[] AllPermissions { get; } = { Read, Create, Access, Update, Delete };
             }
@@ -23,18 +23,18 @@ namespace {Namespace}.Core
         {
             public static class General
             {
-                public static SettingDescriptor {ModuleId}Enabled { get; } = new SettingDescriptor
+                public static SettingDescriptor {ModuleName}Enabled { get; } = new SettingDescriptor
                 {
-                    Name = "{ModuleId}.{ModuleId}Enabled",
-                    GroupName = "{ModuleId}|General",
+                    Name = "{ModuleName}.{ModuleName}Enabled",
+                    GroupName = "{ModuleName}|General",
                     ValueType = SettingValueType.Boolean,
                     DefaultValue = false
                 };
 
-                public static SettingDescriptor {ModuleId}Password { get; } = new SettingDescriptor
+                public static SettingDescriptor {ModuleName}Password { get; } = new SettingDescriptor
                 {
-                    Name = "{ModuleId}.{ModuleId}Password",
-                    GroupName = "{ModuleId}|Advanced",
+                    Name = "{ModuleName}.{ModuleName}Password",
+                    GroupName = "{ModuleName}|Advanced",
                     ValueType = SettingValueType.SecureString,
                     DefaultValue = "qwerty"
                 };
@@ -43,8 +43,8 @@ namespace {Namespace}.Core
                 {
                     get
                     {
-                        yield return {ModuleId}Enabled;
-                        yield return {ModuleId}Password;
+                        yield return {ModuleName}Enabled;
+                        yield return {ModuleName}Password;
                     }
                 }
             }

@@ -60,24 +60,6 @@
             },
             "replaces": "{Year}"
         },
-        "joinedJsModuleId": {
-            "type": "generated",
-            "generator": "join",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "ModuleName"
-                  },
-                  {
-                    "type": "const",
-                    "value": "Module"
-                  }
-                ],
-                "separator": ""
-            },
-            "replaces":"{JsModuleId}"
-        },
         "joinedModuleTitle": {
             "type": "generated",
             "generator": "join",
@@ -99,25 +81,6 @@
                 "separator": " "
             },
             "replaces":"{ModuleTitle}"
-        },
-        "joinedModuleId": {
-            "type": "generated",
-            "generator": "join",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "ModuleName"
-                  },
-                  {
-                    "type": "const",
-                    "value": "Module"
-                  }
-                ],
-                "separator": ""
-            },
-            "fileRename": "{ModuleId}",
-            "replaces":"{ModuleId}"
         },
         "joinedNamespace": {
             "type": "generated",

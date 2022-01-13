@@ -7,7 +7,7 @@
 * Run command
 
 ```dos
-dotnet new --install VirtoCommerce.Module.Template::1.0.0-alpha.9
+dotnet new --install VirtoCommerce.Module.Template
 ```
 
 ## How to create a new module from template
@@ -72,5 +72,5 @@ dotnet new -i vc-module-template
 * Run command
 
 ```dos
-dotnet new -i `full path to vc-module-template`
+dotnet new -u `full path to vc-module-template`
 ```

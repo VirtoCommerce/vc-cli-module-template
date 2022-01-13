@@ -1,5 +1,5 @@
 // Call this to register your module to main application
-var moduleName = '{JsModuleId}';
+var moduleName = '{ModuleName}';
 
 if (AppDependencies !== undefined) {
     AppDependencies.push(moduleName);
@@ -9,14 +9,14 @@ angular.module(moduleName, [])
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
             $stateProvider
-                .state('workspace.{JsModuleId}State', {
-                    url: '/{JsModuleId}',
+                .state('workspace.{ModuleName}State', {
+                    url: '/{ModuleName}',
                     templateUrl: '$(Platform)/Scripts/common/templates/home.tpl.html',
                     controller: [
                         '$scope', 'platformWebApp.bladeNavigationService', function ($scope, bladeNavigationService) {
                             var newBlade = {
                                 id: 'blade1',
-                                controller: '{JsModuleId}.helloWorldController',
+                                controller: '{ModuleName}.helloWorldController',
                                 template: 'Modules/$({Namespace})/Scripts/blades/hello-world.html',
                                 isClosingDisabled: true
                             };
@@ -30,12 +30,12 @@ angular.module(moduleName, [])
         function (mainMenuService, widgetService, $state) {
             //Register module in main menu
             var menuItem = {
-                path: 'browse/{JsModuleId}',
+                path: 'browse/{ModuleName}',
                 icon: 'fa fa-cube',
-                title: '{JsModuleId}',
+                title: '{ModuleName}',
                 priority: 100,
-                action: function () { $state.go('workspace.{JsModuleId}State'); },
-                permission: '{JsModuleId}:access'
+                action: function () { $state.go('workspace.{ModuleName}State'); },
+                permission: '{ModuleName}:access'
             };
             mainMenuService.addMenuItem(menuItem);
         }

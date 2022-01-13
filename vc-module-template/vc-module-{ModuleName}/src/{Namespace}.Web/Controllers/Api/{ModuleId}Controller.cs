@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace {Namespace}.Web.Controllers.Api
 {
-    [Route("api/{ModuleId}")]
-    public class {ModuleId}Controller : Controller
+    [Route("api/{ModuleName}")]
+    public class {ModuleName}Controller : Controller
     {
         // GET: api/{Namespace}
         /// <summary>
