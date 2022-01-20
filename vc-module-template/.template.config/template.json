@@ -36,14 +36,14 @@
             "type": "parameter",
             "dataType": "string",
             "description": "Required Platform Version",
-            "defaultValue": "3.84.0",
+            "defaultValue": "3.200.0",
             "replaces":"{PlatformVersion}"
         },
         "PlatformNuGetPackageVersion": {
             "type": "parameter",
             "dataType": "string",
             "description": "Required Platform NuGet Package Version",
-            "defaultValue": "3.84.0",
+            "defaultValue": "3.200.0",
             "replaces":"{PlatformNuGetPackageVersion}"
         },
         "KebabModuleName": {

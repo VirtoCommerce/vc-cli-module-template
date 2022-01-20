@@ -36,15 +36,20 @@ jobs:
         with:
             fetch-depth: 0
 
+      - name: Set up dotnet6 
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
       - name: Install VirtoCommerce.GlobalTool
-        uses: VirtoCommerce/vc-github-actions/setup-vcbuild@master
+        run: dotnet tool install --global VirtoCommerce.GlobalTool --version 2.1.0-alpha.17
 
       - name: Get changed files
         id: changed-files
         run:  | 
           echo '::set-output name=all::$(git show --pretty="" --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs)'
 
-      - name: Set FORCE_NUGET
+      - name: Set FORCE_NUGET #Force Nuget publishing if changed version file
         run:  | 
           string=${{ steps.changed-files.outputs.all }}
           if [[ $string == *"${{ env.PROJ_PATH }}"* ]]; then
