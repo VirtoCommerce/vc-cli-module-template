@@ -11,16 +11,19 @@ using VirtoCommerce.Platform.Core.Settings;
 
 namespace {Namespace}.Web
 {
-    public class Module : IModule
+    public class Module : IModule, IHasConfiguration
     {
         public ManifestModuleInfo ModuleInfo { get; set; }
+        public IConfiguration Configuration { get; set; }
 
         public void Initialize(IServiceCollection serviceCollection)
         {
             // database initialization
-            var configuration = serviceCollection.BuildServiceProvider().GetRequiredService<IConfiguration>();
-            var connectionString = configuration.GetConnectionString("VirtoCommerce.{ModuleName}") ?? configuration.GetConnectionString("VirtoCommerce");
-            serviceCollection.AddDbContext<{ModuleName}DbContext>(options => options.UseSqlServer(connectionString));
+            serviceCollection.AddDbContext<{ModuleName}DbContext>((provider, options) =>
+            {
+                var configuration = provider.GetRequiredService<IConfiguration>();
+                options.UseSqlServer(configuration.GetConnectionString(ModuleInfo.Id) ?? configuration.GetConnectionString("VirtoCommerce"));
+            });
         }
 
         public void PostInitialize(IApplicationBuilder appBuilder)
