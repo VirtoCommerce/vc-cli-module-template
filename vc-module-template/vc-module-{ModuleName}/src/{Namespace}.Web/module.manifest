@@ -18,12 +18,17 @@
         <owner>{CompanyName}</owner>
     </owners>
 
+    <projectUrl>https://github.com/{CompanyName}/vc-module-{ModuleName}</projectUrl>
+    <iconUrl>Modules/$({Namespace})/Content/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
     <assemblyFile>{Namespace}.Web.dll</assemblyFile>
     <moduleType>{Namespace}.Web.Module, {Namespace}.Web</moduleType>
 
     <releaseNotes>First version.</releaseNotes>
     <copyright>Copyright © {Year} {CompanyName}. All rights reserved</copyright>
     <tags>extension module</tags>
+    <useFullTypeNameInSwagger>false</useFullTypeNameInSwagger>
 
 </module>
 

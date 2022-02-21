@@ -36,13 +36,8 @@ jobs:
         with:
             fetch-depth: 0
 
-      - name: Set up dotnet6 
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
-
       - name: Install VirtoCommerce.GlobalTool
-        run: dotnet tool install --global VirtoCommerce.GlobalTool --version 2.1.0-alpha.17
+        run: dotnet tool install --global VirtoCommerce.GlobalTool
 
       - name: Get changed files
         id: changed-files
