@@ -2,6 +2,7 @@ using Xunit;
 
 namespace {Namespace}.Tests
 {
+    [Trait("Category", "Unit")]
     public class Test
     {
         [Fact]

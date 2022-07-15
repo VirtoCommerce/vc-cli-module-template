@@ -17,10 +17,10 @@ namespace {Namespace}.Data.Repositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
 
             //modelBuilder.Entity<{ModuleName}Entity>().ToTable("{ModuleName}").HasKey(x => x.Id);
-            //modelBuilder.Entity<{ModuleName}Entity>().Property(x => x.Id).HasMaxLength(128);
+            //modelBuilder.Entity<{ModuleName}Entity>().Property(x => x.Id).HasMaxLength(128).ValueGeneratedOnAdd();
         }
     }
 }
