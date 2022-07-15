@@ -3,17 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CFC1B42A-2604-4030-BD28-7706B47C6365}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{11111111-1111-1111-1111-111111111111}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{60C5F34E-58CA-43A7-AFAF-57F20755E996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Web", "src\{Namespace}.Web\{Namespace}.Web.csproj", "{22222222-2222-2222-2222-222222222222}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Web", "src\{Namespace}.Web\{Namespace}.Web.csproj", "{WebProjectGuid}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Data", "src\{Namespace}.Data\{Namespace}.Data.csproj", "{33333333-3333-3333-3333-333333333333}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Data", "src\{Namespace}.Data\{Namespace}.Data.csproj", "{DataProjectGuid}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Core", "src\{Namespace}.Core\{Namespace}.Core.csproj", "{44444444-4444-4444-4444-444444444444}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Tests", "tests\{Namespace}.Tests\{Namespace}.Tests.csproj", "{TestsProjectGuid}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{55555555-5555-5555-5555-555555555555}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Core", "src\{Namespace}.Core\{Namespace}.Core.csproj", "{CoreProjectGuid}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "{Namespace}.Tests", "tests\{Namespace}.Tests\{Namespace}.Tests.csproj", "{66666666-6666-6666-6666-666666666666}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{77777777-7777-7777-7777-777777777777}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		LICENSE = LICENSE
+		module.ignore = module.ignore
+		README.md = README.md
+		{Namespace}.sln.DotSettings = {Namespace}.sln.DotSettings
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,33 +32,33 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{WebProjectGuid}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{WebProjectGuid}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{WebProjectGuid}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{WebProjectGuid}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DataProjectGuid}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DataProjectGuid}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DataProjectGuid}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DataProjectGuid}.Release|Any CPU.Build.0 = Release|Any CPU
-		{TestsProjectGuid}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{TestsProjectGuid}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{TestsProjectGuid}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{TestsProjectGuid}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CoreProjectGuid}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CoreProjectGuid}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CoreProjectGuid}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CoreProjectGuid}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22222222-2222-2222-2222-222222222222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33333333-3333-3333-3333-333333333333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44444444-4444-4444-4444-444444444444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66666666-6666-6666-6666-666666666666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66666666-6666-6666-6666-666666666666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66666666-6666-6666-6666-666666666666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66666666-6666-6666-6666-666666666666}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{WebProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}
-		{DataProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}
-		{CoreProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}
-		{TestsProjectGuid} = {60C5F34E-58CA-43A7-AFAF-57F20755E996}
+		{22222222-2222-2222-2222-222222222222} = {11111111-1111-1111-1111-111111111111}
+		{33333333-3333-3333-3333-333333333333} = {11111111-1111-1111-1111-111111111111}
+		{44444444-4444-4444-4444-444444444444} = {11111111-1111-1111-1111-111111111111}
+		{66666666-6666-6666-6666-666666666666} = {55555555-5555-5555-5555-555555555555}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {SolutionGuid}
+		SolutionGuid = {88888888-8888-8888-8888-888888888888}
 	EndGlobalSection
 EndGlobal
