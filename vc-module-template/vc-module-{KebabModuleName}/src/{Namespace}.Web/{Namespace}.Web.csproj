@@ -14,10 +14,5 @@
     <ProjectReference Include="..\{Namespace}.Core\{Namespace}.Core.csproj" />
     <ProjectReference Include="..\{Namespace}.Data\{Namespace}.Data.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="module.manifest">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
 </Project>

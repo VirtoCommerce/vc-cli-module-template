@@ -6,15 +6,15 @@ if (AppDependencies !== undefined) {
 }
 
 angular.module(moduleName, [])
-    .config(['$stateProvider', '$urlRouterProvider',
-        function ($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider',
+        function ($stateProvider) {
             $stateProvider
                 .state('workspace.{ModuleName}State', {
                     url: '/{ModuleName}',
                     templateUrl: '$(Platform)/Scripts/common/templates/home.tpl.html',
                     controller: [
-                        '$scope', 'platformWebApp.bladeNavigationService',
-                        function ($scope, bladeNavigationService) {
+                        'platformWebApp.bladeNavigationService',
+                        function (bladeNavigationService) {
                             var newBlade = {
                                 id: 'blade1',
                                 controller: '{ModuleName}.helloWorldController',
@@ -27,8 +27,8 @@ angular.module(moduleName, [])
                 });
         }
     ])
-    .run(['platformWebApp.mainMenuService', 'platformWebApp.widgetService', '$state',
-        function (mainMenuService, widgetService, $state) {
+    .run(['platformWebApp.mainMenuService', '$state',
+        function (mainMenuService, $state) {
             //Register module in main menu
             var menuItem = {
                 path: 'browse/{ModuleName}',

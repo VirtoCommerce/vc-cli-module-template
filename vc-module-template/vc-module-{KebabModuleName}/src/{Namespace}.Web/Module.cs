@@ -35,7 +35,7 @@ namespace {Namespace}.Web
             // register permissions
             var permissionsProvider = appBuilder.ApplicationServices.GetRequiredService<IPermissionsRegistrar>();
             permissionsProvider.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions
-                .Select(x => new Permission() { GroupName = "{ModuleName}", ModuleId = ModuleInfo.Id, Name = x })
+                .Select(x => new Permission { GroupName = "{ModuleName}", ModuleId = ModuleInfo.Id, Name = x })
                 .ToArray());
 
             // Ensure that any pending migrations are applied
@@ -51,7 +51,6 @@ namespace {Namespace}.Web
 
         public void Uninstall()
         {
-            // do nothing in here
         }
     }
 }
