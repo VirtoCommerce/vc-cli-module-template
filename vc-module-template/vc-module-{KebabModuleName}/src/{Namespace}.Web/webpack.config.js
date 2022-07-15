@@ -9,7 +9,7 @@ const rootPath = path.resolve(__dirname, 'dist');
 function getEntrypoints() {
     const result = [
         ...glob.sync('./Scripts/**/*.js', { nosort: true }),
-        ...glob.sync('./Content/**/*.css', { nosort: true })
+        ...glob.sync('./Content/**/*.css', { nosort: true }),
     ];
 
     return result;
@@ -20,7 +20,7 @@ module.exports = [
         entry: getEntrypoints(),
         output: {
             path: rootPath,
-            filename: 'app.js'
+            filename: 'app.js',
         },
         module: {
             rules: [
@@ -33,11 +33,11 @@ module.exports = [
         devtool: false,
         plugins: [
             new webpack.SourceMapDevToolPlugin({
-                namespace: '{Namespace}'
+                namespace: '{Namespace}',
             }),
             new CleanWebpackPlugin(rootPath, { verbose: true }),
             new MiniCssExtractPlugin({
-                filename: 'style.css'
+                filename: 'style.css',
             })
         ]
     }

@@ -1,7 +1,6 @@
-using {Namespace}.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+using {Namespace}.Core;
 
 namespace {Namespace}.Web.Controllers.Api
 {

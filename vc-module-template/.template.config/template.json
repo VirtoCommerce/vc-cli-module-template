@@ -1,191 +1,191 @@
 {
-    "$schema": "http://json.schemastore.org/template",
-    "author": "VirtoWay",
-    "classifications": [ "ecommerce", "platform", "virtocommerce", "virto", "commerce" ],
-    "identity": "VirtoCommerce3.Module",
-    "name": "Virto Commerce 3.x Module Template",
-    "shortName": "vc-module",
-    "tags": {
-      "language": "C#",
-      "type": "project"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VirtoWay",
+  "classifications": [ "ecommerce", "platform", "virtocommerce", "virto", "commerce" ],
+  "identity": "VirtoCommerce3.Module",
+  "name": "Virto Commerce 3.x Module Template",
+  "shortName": "vc-module",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "Author": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your name",
+      "defaultValue": "John Doe",
+      "replaces": "{Author}"
     },
-    "symbols": {
-        "Author": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Your name",
-            "defaultValue": "John Doe",
-            "replaces":"{Author}"
-        },
-        "CompanyName": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Your company name",
-            "defaultValue": "VirtoCommerce",
-            "replaces":"{CompanyName}"
-        },
-        "ModuleName": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Your module name",
-            "defaultValue": "newModule",
-            "replaces":"{ModuleName}",
-            "fileRename": "{ModuleName}"
-        },
-        "PlatformVersion": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Required Platform Version",
-            "defaultValue": "3.200.0",
-            "replaces":"{PlatformVersion}"
-        },
-        "PlatformNuGetPackageVersion": {
-            "type": "parameter",
-            "dataType": "string",
-            "description": "Required Platform NuGet Package Version",
-            "defaultValue": "3.200.0",
-            "replaces":"{PlatformNuGetPackageVersion}"
-        },
-        "KebabModuleName": {
-            "type":"derived",
-            "valueSource": "ModuleName",
-            "valueTransform": "kebab",
-            "replaces": "{KebabModuleName}",
-            "fileRename": "{KebabModuleName}"
-        },
-        "copyrightYear": {
-            "type": "generated",
-            "generator": "now",
-            "parameters": {
-              "format": "yyyy"
-            },
-            "replaces": "{Year}"
-        },
-        "joinedModuleTitle": {
-            "type": "generated",
-            "generator": "join",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "CompanyName"
-                  },
-                  {
-                    "type": "ref",
-                    "value": "ModuleName"
-                  },
-                  {
-                    "type": "const",
-                    "value": "extension module"
-                  }
-                ],
-                "separator": " "
-            },
-            "replaces":"{ModuleTitle}"
-        },
-        "joinedNamespace": {
-            "type": "generated",
-            "generator": "join",
-            "parameters": {
-                "symbols": [
-                  {
-                    "type": "ref",
-                    "value": "CompanyName"
-                  },
-                  {
-                    "type": "ref",
-                    "value": "ModuleName"
-                  }
-                ],
-                "separator": "."
-            },
-            "fileRename": "{Namespace}",
-            "replaces":"{Namespace}"
-        },
-        "CoreProjectGuid": {
-            "type": "generated",
-            "generator": "guid",
-            "parameters": {
-                "format":"B"
-            }
-        },
-        "DataProjectGuid": {
-            "type": "generated",
-            "generator": "guid",
-            "parameters": {
-                "format":"B"
-            }
-        },
-        "TestsProjectGuid": {
-            "type": "generated",
-            "generator": "guid",
-            "parameters": {
-                "format":"B"
-            }
-        },
-        "WebProjectGuid": {
-            "type": "generated",
-            "generator": "guid",
-            "parameters": {
-                "format":"B"
-            }
-        },
-        "SolutionGuid": {
-            "type": "generated",
-            "generator": "guid",
-            "parameters": {
-                "format":"B"
-            }
-        },
-        "CoreProjectGuidUpper":{
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source":"CoreProjectGuid",
-              "toLower": false
-            },
-            "replaces":"CoreProjectGuid"
-        },
-        "DataProjectGuidUpper":{
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source":"DataProjectGuid",
-              "toLower": false
-            },
-            "replaces":"DataProjectGuid"
-        },
-        "TestsProjectGuidUpper":{
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source":"TestsProjectGuid",
-              "toLower": false
-            },
-            "replaces":"TestsProjectGuid"
-        },
-        "WebProjectGuidUpper":{
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source":"WebProjectGuid",
-              "toLower": false
-            },
-            "replaces":"WebProjectGuid"
-        },
-        "SolutionGuidUpper":{
-            "type": "generated",
-            "generator": "casing",
-            "parameters": {
-              "source":"SolutionGuid",
-              "toLower": false
-            },
-            "replaces":"SolutionGuid"
-        }
+    "CompanyName": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your company name",
+      "defaultValue": "VirtoCommerce",
+      "replaces": "{CompanyName}"
     },
-    "forms": {
-        "kebab":{
-            "identifier": "kebabCase"
-        }
+    "ModuleName": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your module name",
+      "defaultValue": "newModule",
+      "replaces": "{ModuleName}",
+      "fileRename": "{ModuleName}"
+    },
+    "PlatformVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Required Platform Version",
+      "defaultValue": "3.200.0",
+      "replaces": "{PlatformVersion}"
+    },
+    "PlatformNuGetPackageVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Required Platform NuGet Package Version",
+      "defaultValue": "3.200.0",
+      "replaces": "{PlatformNuGetPackageVersion}"
+    },
+    "KebabModuleName": {
+      "type": "derived",
+      "valueSource": "ModuleName",
+      "valueTransform": "kebab",
+      "replaces": "{KebabModuleName}",
+      "fileRename": "{KebabModuleName}"
+    },
+    "copyrightYear": {
+      "type": "generated",
+      "generator": "now",
+      "parameters": {
+        "format": "yyyy"
+      },
+      "replaces": "{Year}"
+    },
+    "joinedModuleTitle": {
+      "type": "generated",
+      "generator": "join",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "ref",
+            "value": "CompanyName"
+          },
+          {
+            "type": "ref",
+            "value": "ModuleName"
+          },
+          {
+            "type": "const",
+            "value": "extension module"
+          }
+        ],
+        "separator": " "
+      },
+      "replaces": "{ModuleTitle}"
+    },
+    "joinedNamespace": {
+      "type": "generated",
+      "generator": "join",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "ref",
+            "value": "CompanyName"
+          },
+          {
+            "type": "ref",
+            "value": "ModuleName"
+          }
+        ],
+        "separator": "."
+      },
+      "fileRename": "{Namespace}",
+      "replaces": "{Namespace}"
+    },
+    "CoreProjectGuid": {
+      "type": "generated",
+      "generator": "guid",
+      "parameters": {
+        "format": "B"
+      }
+    },
+    "DataProjectGuid": {
+      "type": "generated",
+      "generator": "guid",
+      "parameters": {
+        "format": "B"
+      }
+    },
+    "TestsProjectGuid": {
+      "type": "generated",
+      "generator": "guid",
+      "parameters": {
+        "format": "B"
+      }
+    },
+    "WebProjectGuid": {
+      "type": "generated",
+      "generator": "guid",
+      "parameters": {
+        "format": "B"
+      }
+    },
+    "SolutionGuid": {
+      "type": "generated",
+      "generator": "guid",
+      "parameters": {
+        "format": "B"
+      }
+    },
+    "CoreProjectGuidUpper": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "CoreProjectGuid",
+        "toLower": false
+      },
+      "replaces": "CoreProjectGuid"
+    },
+    "DataProjectGuidUpper": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "DataProjectGuid",
+        "toLower": false
+      },
+      "replaces": "DataProjectGuid"
+    },
+    "TestsProjectGuidUpper": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "TestsProjectGuid",
+        "toLower": false
+      },
+      "replaces": "TestsProjectGuid"
+    },
+    "WebProjectGuidUpper": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "WebProjectGuid",
+        "toLower": false
+      },
+      "replaces": "WebProjectGuid"
+    },
+    "SolutionGuidUpper": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "SolutionGuid",
+        "toLower": false
+      },
+      "replaces": "SolutionGuid"
     }
+  },
+  "forms": {
+    "kebab": {
+      "identifier": "kebabCase"
+    }
+  }
 }
