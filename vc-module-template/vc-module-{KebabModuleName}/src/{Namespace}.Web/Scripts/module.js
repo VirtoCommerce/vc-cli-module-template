@@ -13,12 +13,13 @@ angular.module(moduleName, [])
                     url: '/{ModuleName}',
                     templateUrl: '$(Platform)/Scripts/common/templates/home.tpl.html',
                     controller: [
-                        '$scope', 'platformWebApp.bladeNavigationService', function ($scope, bladeNavigationService) {
+                        '$scope', 'platformWebApp.bladeNavigationService',
+                        function ($scope, bladeNavigationService) {
                             var newBlade = {
                                 id: 'blade1',
                                 controller: '{ModuleName}.helloWorldController',
                                 template: 'Modules/$({Namespace})/Scripts/blades/hello-world.html',
-                                isClosingDisabled: true
+                                isClosingDisabled: true,
                             };
                             bladeNavigationService.showBlade(newBlade);
                         }
@@ -35,7 +36,7 @@ angular.module(moduleName, [])
                 title: '{ModuleName}',
                 priority: 100,
                 action: function () { $state.go('workspace.{ModuleName}State'); },
-                permission: '{ModuleName}:access'
+                permission: '{ModuleName}:access',
             };
             mainMenuService.addMenuItem(menuItem);
         }

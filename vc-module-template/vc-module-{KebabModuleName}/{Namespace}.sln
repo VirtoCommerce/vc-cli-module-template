@@ -1,3 +1,4 @@
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 16
 VisualStudioVersion = 16.0.29920.165
@@ -40,7 +41,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-    GlobalSection(NestedProjects) = preSolution
+	GlobalSection(NestedProjects) = preSolution
 		{WebProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}
 		{DataProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}
 		{CoreProjectGuid} = {CFC1B42A-2604-4030-BD28-7706B47C6365}

@@ -15,7 +15,14 @@ namespace {Namespace}.Core
                 public const string Update = "{ModuleName}:update";
                 public const string Delete = "{ModuleName}:delete";
 
-                public static string[] AllPermissions { get; } = { Read, Create, Access, Update, Delete };
+                public static string[] AllPermissions { get; } =
+                {
+                    Access,
+                    Create,
+                    Read,
+                    Update,
+                    Delete,
+                };
             }
         }
 
@@ -28,7 +35,7 @@ namespace {Namespace}.Core
                     Name = "{ModuleName}.{ModuleName}Enabled",
                     GroupName = "{ModuleName}|General",
                     ValueType = SettingValueType.Boolean,
-                    DefaultValue = false
+                    DefaultValue = false,
                 };
 
                 public static SettingDescriptor {ModuleName}Password { get; } = new SettingDescriptor
@@ -36,7 +43,7 @@ namespace {Namespace}.Core
                     Name = "{ModuleName}.{ModuleName}Password",
                     GroupName = "{ModuleName}|Advanced",
                     ValueType = SettingValueType.SecureString,
-                    DefaultValue = "qwerty"
+                    DefaultValue = "qwerty",
                 };
 
                 public static IEnumerable<SettingDescriptor> AllSettings
