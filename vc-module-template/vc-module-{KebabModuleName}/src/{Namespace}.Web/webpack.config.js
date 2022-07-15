@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, 'dist');
 
-function getEntrypoints() {
+function getEntryPoints() {
     const result = [
         ...glob.sync('./Scripts/**/*.js', { nosort: true }),
         ...glob.sync('./Content/**/*.css', { nosort: true }),
@@ -17,7 +17,7 @@ function getEntrypoints() {
 
 module.exports = [
     {
-        entry: getEntrypoints(),
+        entry: getEntryPoints(),
         output: {
             path: rootPath,
             filename: 'app.js',

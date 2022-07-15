@@ -18,7 +18,7 @@ namespace {Namespace}.Web
 
         public void Initialize(IServiceCollection serviceCollection)
         {
-            // database initialization
+            // Initialize database
             serviceCollection.AddDbContext<{ModuleName}DbContext>((provider, options) =>
             {
                 var configuration = provider.GetRequiredService<IConfiguration>();
@@ -28,17 +28,17 @@ namespace {Namespace}.Web
 
         public void PostInitialize(IApplicationBuilder appBuilder)
         {
-            // register settings
+            // Register settings
             var settingsRegistrar = appBuilder.ApplicationServices.GetRequiredService<ISettingsRegistrar>();
             settingsRegistrar.RegisterSettings(ModuleConstants.Settings.AllSettings, ModuleInfo.Id);
 
-            // register permissions
-            var permissionsProvider = appBuilder.ApplicationServices.GetRequiredService<IPermissionsRegistrar>();
-            permissionsProvider.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions
+            // Register permissions
+            var permissionsRegistrar = appBuilder.ApplicationServices.GetRequiredService<IPermissionsRegistrar>();
+            permissionsRegistrar.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions
                 .Select(x => new Permission { GroupName = "{ModuleName}", ModuleId = ModuleInfo.Id, Name = x })
                 .ToArray());
 
-            // Ensure that any pending migrations are applied
+            // Apply migrations
             using (var serviceScope = appBuilder.ApplicationServices.CreateScope())
             {
                 using (var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>())
