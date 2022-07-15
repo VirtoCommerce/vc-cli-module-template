@@ -19,34 +19,38 @@ namespace {Namespace}.Web
         public void Initialize(IServiceCollection serviceCollection)
         {
             // Initialize database
-            serviceCollection.AddDbContext<{ModuleName}DbContext>((provider, options) =>
-            {
-                var configuration = provider.GetRequiredService<IConfiguration>();
-                options.UseSqlServer(configuration.GetConnectionString(ModuleInfo.Id) ?? configuration.GetConnectionString("VirtoCommerce"));
-            });
+            var connectionString = Configuration.GetConnectionString(ModuleInfo.Id) ??
+                                   Configuration.GetConnectionString("VirtoCommerce");
+
+            serviceCollection.AddDbContext<{ModuleName}DbContext>(options => options.UseSqlServer(connectionString));
+
+            // Override models
+            //AbstractTypeFactory<OriginalModel>.OverrideType<OriginalModel, ExtendedModel>().MapToType<ExtendedEntity>();
+            //AbstractTypeFactory<OriginalEntity>.OverrideType<OriginalEntity, ExtendedEntity>();
+
+            // Register services
+            //serviceCollection.AddTransient<IMyService, MyService>();
         }
 
         public void PostInitialize(IApplicationBuilder appBuilder)
         {
+            var serviceProvider = appBuilder.ApplicationServices;
+
             // Register settings
-            var settingsRegistrar = appBuilder.ApplicationServices.GetRequiredService<ISettingsRegistrar>();
+            var settingsRegistrar = serviceProvider.GetRequiredService<ISettingsRegistrar>();
             settingsRegistrar.RegisterSettings(ModuleConstants.Settings.AllSettings, ModuleInfo.Id);
 
             // Register permissions
-            var permissionsRegistrar = appBuilder.ApplicationServices.GetRequiredService<IPermissionsRegistrar>();
+            var permissionsRegistrar = serviceProvider.GetRequiredService<IPermissionsRegistrar>();
             permissionsRegistrar.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions
-                .Select(x => new Permission { GroupName = "{ModuleName}", ModuleId = ModuleInfo.Id, Name = x })
+                .Select(x => new Permission { ModuleId = ModuleInfo.Id, GroupName = "{ModuleName}", Name = x })
                 .ToArray());
 
             // Apply migrations
-            using (var serviceScope = appBuilder.ApplicationServices.CreateScope())
-            {
-                using (var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>())
-                {
-                    dbContext.Database.EnsureCreated();
-                    dbContext.Database.Migrate();
-                }
-            }
+            using var serviceScope = serviceProvider.CreateScope();
+            using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>();
+            dbContext.Database.EnsureCreated();
+            dbContext.Database.Migrate();
         }
 
         public void Uninstall()
