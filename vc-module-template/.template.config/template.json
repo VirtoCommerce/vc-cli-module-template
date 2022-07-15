@@ -50,6 +50,7 @@
             "type":"derived",
             "valueSource": "ModuleName",
             "valueTransform": "kebab",
+            "replaces": "{KebabModuleName}",
             "fileRename": "{KebabModuleName}"
         },
         "copyrightYear": {
