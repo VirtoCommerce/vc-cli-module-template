@@ -18,7 +18,7 @@
         <owner>{CompanyName}</owner>
     </owners>
 
-    <projectUrl>https://github.com/{CompanyName}/vc-module-{ModuleName}</projectUrl>
+    <projectUrl>https://github.com/{CompanyName}/vc-module-{KebabModuleName}</projectUrl>
     <iconUrl>Modules/$({Namespace})/Content/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
