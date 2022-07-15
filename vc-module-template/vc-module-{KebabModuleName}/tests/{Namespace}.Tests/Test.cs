@@ -4,10 +4,6 @@ namespace {Namespace}.Tests
 {
     public class Test
     {
-        public Test()
-        {
-        }
-
         [Fact]
         public void Run_Test()
         {

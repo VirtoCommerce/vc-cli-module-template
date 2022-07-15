@@ -15,13 +15,13 @@
   },
   "settings": {
     "{ModuleName}": {
-      "{ModuleName}Password": {
-        "title": "{ModuleName} Password",
-        "description": "{ModuleName} Password setting"
-      },
       "{ModuleName}Enabled": {
         "title": "{ModuleName} Enabled",
         "description": "{ModuleName} Enabled setting"
+      },
+      "{ModuleName}Password": {
+        "title": "{ModuleName} Password",
+        "description": "{ModuleName} Password setting"
       }
     }
   }

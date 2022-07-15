@@ -334,3 +334,6 @@ ASALocalRun/
 # Virto
 *.nupkg
 *.zip
+.nuke
+dist/
+**/Properties/launchSettings.json
