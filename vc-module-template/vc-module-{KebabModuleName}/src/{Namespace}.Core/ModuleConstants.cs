@@ -46,7 +46,7 @@ namespace {Namespace}.Core
                     DefaultValue = "qwerty",
                 };
 
-                public static IEnumerable<SettingDescriptor> AllSettings
+                public static IEnumerable<SettingDescriptor> AllGeneralSettings
                 {
                     get
                     {
@@ -60,7 +60,7 @@ namespace {Namespace}.Core
             {
                 get
                 {
-                    return General.AllSettings;
+                    return General.AllGeneralSettings;
                 }
             }
         }

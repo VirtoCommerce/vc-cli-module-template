@@ -4,10 +4,10 @@ using {Namespace}.Core;
 
 namespace {Namespace}.Web.Controllers.Api
 {
-    [Route("api/{ModuleName}")]
+    [Route("api/{KebabModuleName}")]
     public class {ModuleName}Controller : Controller
     {
-        // GET: api/{Namespace}
+        // GET: api/{KebabModuleName}
         /// <summary>
         /// Get message
         /// </summary>
