@@ -22,7 +22,7 @@ dotnet new vc-module --ModuleName CustomerReviews --Author "Jon Doe" --CompanyNa
 
 where --ModuleName your module name, --Author your name and --CompanyName your company name
 
-* `vc-module-CustomerReviews` folder with module solution will be created
+* `vc-module-customer-reviews` folder with module solution will be created
 * PlatformVersion and PlatformNuGetPackageVersion parameters have "3.200.0" "3.200.0" default values respectively. You can skip these parameters if you use default versions
 
 
