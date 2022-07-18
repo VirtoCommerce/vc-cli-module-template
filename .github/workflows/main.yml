@@ -2,6 +2,12 @@ name: Module template CI
 
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        type: boolean
+        default: false
+        description: Publish release
+      
   push:
     paths-ignore:
       - '.github/**'
@@ -50,6 +56,11 @@ jobs:
           if [[ $string == *"${{ env.PROJ_PATH }}"* ]]; then
             echo "FORCE_NUGET=true" >> $GITHUB_ENV
           fi
+
+      - name: Set FORCE_NUGET #Force Nuget publishing if workflow_dispatch release input checked
+        if: github.event.inputs.release == 'true' &&  github.event_name == 'workflow_dispatch'
+        run:  | 
+            echo "FORCE_NUGET=true" >> $GITHUB_ENV
 
       - name: Show FORCE_NUGET
         run:  | 
