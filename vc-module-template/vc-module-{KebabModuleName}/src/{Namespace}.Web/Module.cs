@@ -49,7 +49,6 @@ namespace {Namespace}.Web
             // Apply migrations
             using var serviceScope = serviceProvider.CreateScope();
             using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>();
-            dbContext.Database.EnsureCreated();
             dbContext.Database.Migrate();
         }
 
