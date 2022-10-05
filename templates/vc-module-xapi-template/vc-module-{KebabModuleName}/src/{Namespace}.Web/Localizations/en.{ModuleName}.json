@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "{ModuleName}:create": "Create {ModuleName} related data",
+    "{ModuleName}:read": "View {ModuleName} related data",
+    "{ModuleName}:update": "Update {ModuleName} related data",
+    "{ModuleName}:delete": "Delete {ModuleName} related data"
+  }
+}

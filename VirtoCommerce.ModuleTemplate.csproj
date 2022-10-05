@@ -4,12 +4,11 @@
     <PackageType>Template</PackageType>
     <PackageVersion>3.200.8</PackageVersion>
     <PackageId>VirtoCommerce.Module.Template</PackageId>
-    <Title>VirtoCommerce Module Template</Title>
+    <Title>VirtoCommerce Module Templates</Title>
     <Authors>VirtoWay</Authors>
-    <Description>Virto Commerce 3.200.x Module Template.</Description>
+    <Description>Virto Commerce 3.200.x Module Templates.</Description>
     <PackageTags>dotnet-new;templates;VirtoCommerce</PackageTags>
     <TargetFramework>net6.0</TargetFramework>
-
 
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -18,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="vc-module-template\**"/>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
   </ItemGroup>
 
