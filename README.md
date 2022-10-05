@@ -1,12 +1,12 @@
-# vc-module-template
+# Virto Commerce module templates
 
-`dotnet new` cli VirtoCommerce module template
+`dotnet new` CLI Virto Commerce module templates
 
-## How to install template from NuGet repository
+## How to install templates from NuGet repository
 
 * Run command
 
-```dos
+```PowerShell
 dotnet new --install VirtoCommerce.Module.Template
 ```
 
@@ -16,15 +16,25 @@ dotnet new --install VirtoCommerce.Module.Template
 * Navigate to your sources folder
 * Run command
 
-```dos
-dotnet new vc-module --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce --PlatformVersion "3.253.1" --PlatformNuGetPackageVersion "3.253.1"
+```PowerShell
+dotnet new vc-module --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce --PlatformVersion "3.253.1"
 ```
 
-where --ModuleName your module name, --Author your name and --CompanyName your company name
+where `--ModuleName` is your module name, `--Author` is your name, and `--CompanyName` is your company name
 
 * `vc-module-customer-reviews` folder with module solution will be created
-* PlatformVersion and PlatformNuGetPackageVersion parameters have "3.253.1" "3.253.1" default values respectively. You can skip these parameters if you use default versions
+* PlatformVersion parameter has "3.253.1" value by default. You can skip this parameter if you use default version
 
+## How to create a new XAPI module from template
+There is a seprate template named `vc-module-xapi` for an XAPI module.
+
+* Open Windows PowerShell CMD
+* Navigate to your sources folder
+* Run command
+
+```PowerShell
+dotnet new vc-module-xapi --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce --PlatformVersion "3.253.1"
+```
 
 ## Parameters description
 
@@ -33,44 +43,37 @@ where --ModuleName your module name, --Author your name and --CompanyName your c
 | --Author (or -A) | Your name | string | Optional| John Doe |
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
 | --ModuleName (or -M) | Your module name | string | Optional | newModule |
-| --PlatformVersion (or -P) | Required Platform Version | string | Optional | 3.253.1 |
-| --PlatformNuGetPackageVersion (or -Pl) | Required Platform NuGet Package Version | string | Optional | 3.253.1 |
+| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.253.1 |
 
-## How to uninstall template installed from NuGet repository
+## How to uninstall templates installed from NuGet repository
 
 * Run command
 
-```dos
+```PowerShell
 dotnet new -u VirtoCommerce.Module.Template
 ```
 
 ## How to contribute
 
-### Install template locally
+### Install templates locally
 
 * Open Windows PowerShell CMD
 * Clone repository
 
-```dos
+```PowerShell
 git clone https://github.com/VirtoCommerce/vc-cli-module-template
 ```
 
-* Navigate to cloned repository
+* Install downloaded templates
 
-```dos
-cd vc-cli-module-template
+```PowerShell
+dotnet new -i vc-cli-module-template\templates
 ```
 
-* Install downloaded template
-
-```dos
-dotnet new -i vc-module-template
-```
-
-### How to uninstall locally installed template
+### How to uninstall locally installed templates
 
 * Run command
 
-```dos
-dotnet new -u `full path to vc-module-template`
+```PowerShell
+dotnet new -u <full or relative path to the templates directory>
 ```
