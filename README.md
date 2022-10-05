@@ -33,7 +33,7 @@ There is a seprate template named `vc-module-xapi` for an XAPI module.
 * Run command
 
 ```PowerShell
-dotnet new vc-module-xapi --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce --PlatformVersion "3.253.1"
+dotnet new vc-module-xapi --ModuleName QuoteExperienceApi --Author "Jon Doe" --CompanyName VirtoCommerce --PlatformVersion "3.253.1"
 ```
 
 ## Parameters description
