@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>3.200.8</PackageVersion>
+    <PackageVersion>3.200.9</PackageVersion>
     <PackageId>VirtoCommerce.Module.Template</PackageId>
     <Title>VirtoCommerce Module Templates</Title>
     <Authors>VirtoWay</Authors>
