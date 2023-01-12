@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-      <!-- Project is not a test project -->
-      <SonarQubeTestProject>false</SonarQubeTestProject>
+    <!-- Project is not a test project -->
+    <SonarQubeTestProject>false</SonarQubeTestProject>
   </PropertyGroup>
 
   <ItemGroup>
