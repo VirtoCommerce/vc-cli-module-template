@@ -38,7 +38,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your module name",
-      "defaultValue": "newModule",
+      "defaultValue": "NewModule",
       "replaces": "{ModuleName}",
       "fileRename": "{ModuleName}"
     },
