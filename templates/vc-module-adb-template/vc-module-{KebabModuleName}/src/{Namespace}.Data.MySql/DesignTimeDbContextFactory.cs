@@ -2,35 +2,37 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using {Namespace}.Data.Repositories;
 
-
 namespace {Namespace}.Data.MySql;
 
-public class MySqlDbContextFactory : IDesignTimeDbContextFactory<{ModuleName}DbContext>
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleName}DbContext>
 {
     public {ModuleName}DbContext CreateDbContext(string[] args)
     {
         var builder = new DbContextOptionsBuilder<{ModuleName}DbContext>();
-        var connectionString = args.Any() ? args[0] : "server=localhost;user=root;password=virto;database=VirtoCommerce3;";
-        var serverVersion = args.Length >= 2 ? args[1] : null;
+        var connectionString = args.Any() ? args[0] : "Server=localhost;User=virto;Password=virto;Database=VirtoCommerce3;";
 
         builder.UseMySql(
             connectionString,
-            ResolveServerVersion(serverVersion, connectionString),
-            db => db.MigrationsAssembly(typeof(MySqlDbContextFactory).Assembly.GetName().Name));
+            ResolveServerVersion(args, connectionString),
+            options => options.MigrationsAssembly(GetType().Assembly.GetName().Name));
 
         return new {ModuleName}DbContext(builder.Options);
     }
 
-    private static ServerVersion ResolveServerVersion(string? serverVersion, string connectionString)
+    private static ServerVersion ResolveServerVersion(string[] args, string connectionString)
     {
+        var serverVersion = args.Length >= 2 ? args[1] : null;
+
         if (serverVersion == "AutoDetect")
         {
             return ServerVersion.AutoDetect(connectionString);
         }
-        else if (serverVersion != null)
+
+        if (serverVersion != null)
         {
             return ServerVersion.Parse(serverVersion);
         }
+
         return new MySqlServerVersion(new Version(5, 7));
     }
 }

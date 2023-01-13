@@ -18,21 +18,21 @@ public class {ModuleName}DbContext : DbContextWithTriggers
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         //modelBuilder.Entity<{ModuleName}Entity>().ToTable("{ModuleName}").HasKey(x => x.Id);
         //modelBuilder.Entity<{ModuleName}Entity>().Property(x => x.Id).HasMaxLength(128).ValueGeneratedOnAdd();
 
-        base.OnModelCreating(modelBuilder);
-
-        switch (this.Database.ProviderName)
+        switch (Database.ProviderName)
         {
             case "Pomelo.EntityFrameworkCore.MySql":
-                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load($"{Namespace}.Data.MySql"));
+                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load("{Namespace}.Data.MySql"));
                 break;
             case "Npgsql.EntityFrameworkCore.PostgreSQL":
-                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load($"{Namespace}.Data.PostgreSql"));
+                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load("{Namespace}.Data.PostgreSql"));
                 break;
             case "Microsoft.EntityFrameworkCore.SqlServer":
-                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load($"{Namespace}.Data.SqlServer"));
+                modelBuilder.ApplyConfigurationsFromAssembly(Assembly.Load("{Namespace}.Data.SqlServer"));
                 break;
         }
     }
