@@ -1,8 +1,10 @@
+const namespace = '{Namespace}'
+
 const glob = require('glob');
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const rootPath = path.resolve(__dirname, 'dist');
 
@@ -15,9 +17,12 @@ function getEntryPoints() {
     return result;
 }
 
-module.exports = [
-    {
+module.exports = (env, argv) => {
+    const isProduction = argv.mode === 'production';
+
+    return {
         entry: getEntryPoints(),
+        devtool: false,
         output: {
             path: rootPath,
             filename: 'app.js',
@@ -30,15 +35,19 @@ module.exports = [
                 }
             ]
         },
-        devtool: false,
         plugins: [
-            new webpack.SourceMapDevToolPlugin({
-                namespace: '{Namespace}',
-            }),
-            new CleanWebpackPlugin(rootPath, { verbose: true }),
+            new CleanWebpackPlugin(),
+            isProduction ?
+                new webpack.SourceMapDevToolPlugin({
+                    namespace: namespace,
+                    filename: '[file].map[query]'
+                }) :
+                new webpack.SourceMapDevToolPlugin({
+                    namespace: namespace
+                }),
             new MiniCssExtractPlugin({
                 filename: 'style.css',
             })
         ]
-    }
-];
+    };
+};

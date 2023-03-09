@@ -49,7 +49,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Required Platform Version",
-      "defaultValue": "3.253.1",
+      "defaultValue": "3.264.5",
       "replaces": "{PlatformVersion}"
     },
     "KebabModuleName": {
