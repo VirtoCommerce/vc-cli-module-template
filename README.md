@@ -15,7 +15,7 @@ This repository contains `dotnet new` templates for Virto Commerce Modules.
 To get started, first install the templates:
 
 ```PowerShell
-dotnet new --install VirtoCommerce.Module.Template
+dotnet new install VirtoCommerce.Module.Template
 ```
 
 ### How to create a new module from template
@@ -58,7 +58,7 @@ dotnet new vc-module-xapi --ModuleName QuoteExperienceApi --Author "Jon Doe" --C
 Run dotnet to uninstall templates
 
 ```PowerShell
-dotnet new -u VirtoCommerce.Module.Template
+dotnet new uninstall VirtoCommerce.Module.Template
 ```
 
 ## How to contribute
@@ -75,7 +75,7 @@ git clone https://github.com/VirtoCommerce/vc-cli-module-template
 * Install downloaded templates
 
 ```PowerShell
-dotnet new -i vc-cli-module-template\templates
+dotnet new install vc-cli-module-template\templates
 ```
 
 ### How to uninstall locally installed templates
@@ -83,7 +83,7 @@ dotnet new -i vc-cli-module-template\templates
 * Run command
 
 ```PowerShell
-dotnet new -u <full or relative path to the templates directory>
+dotnet new uninstall <full or relative path to the templates directory>
 ```
 
 ## License
