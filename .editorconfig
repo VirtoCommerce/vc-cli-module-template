@@ -3,16 +3,11 @@ root = true
 [*]
 charset = utf-8
 indent_style = space
-indent_size = 4
+indent_size = 2
 end_of_line = crlf
 trim_trailing_whitespace = true
 insert_final_newline = true
 
 # Project files
 [*.{csproj,props}]
-indent_size = 2
 insert_final_newline = false
-
-# JSON files
-[*.json]
-indent_size = 2
