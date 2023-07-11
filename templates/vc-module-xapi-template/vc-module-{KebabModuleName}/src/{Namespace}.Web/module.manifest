@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
-    <id>{Namespace}</id>
-    <version>3.200.0</version>
-    <version-tag></version-tag>
+  <id>{Namespace}</id>
+  <version>3.200.0</version>
+  <version-tag></version-tag>
 
-    <platformVersion>{PlatformVersion}</platformVersion>
-    <dependencies>
-        <dependency id="VirtoCommerce.ExperienceApi" version="3.233.0" />
-    </dependencies>
+  <platformVersion>{PlatformVersion}</platformVersion>
+  <dependencies>
+    <dependency id="VirtoCommerce.ExperienceApi" version="3.233.0" />
+  </dependencies>
 
-    <title>{ModuleTitle}</title>
-    <description>{ModuleTitle}</description>
+  <title>{ModuleTitle}</title>
+  <description>{ModuleTitle}</description>
 
-    <authors>
-        <author>{Author}</author>
-    </authors>
-    <owners>
-        <owner>{CompanyName}</owner>
-    </owners>
+  <authors>
+    <author>{Author}</author>
+  </authors>
+  <owners>
+    <owner>{CompanyName}</owner>
+  </owners>
 
-    <projectUrl>https://github.com/{CompanyName}/vc-module-{KebabModuleName}</projectUrl>
-    <iconUrl>Modules/$({Namespace})/Content/logo.png</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  <projectUrl>https://github.com/{CompanyName}/vc-module-{KebabModuleName}</projectUrl>
+  <iconUrl>Modules/$({Namespace})/Content/logo.png</iconUrl>
+  <requireLicenseAcceptance>false</requireLicenseAcceptance>
 
-    <assemblyFile>{Namespace}.Web.dll</assemblyFile>
-    <moduleType>{Namespace}.Web.Module, {Namespace}.Web</moduleType>
+  <assemblyFile>{Namespace}.Web.dll</assemblyFile>
+  <moduleType>{Namespace}.Web.Module, {Namespace}.Web</moduleType>
 
-    <releaseNotes>First version.</releaseNotes>
-    <copyright>Copyright © {Year} {CompanyName}. All rights reserved</copyright>
-    <tags>extension module</tags>
-    <useFullTypeNameInSwagger>false</useFullTypeNameInSwagger>
+  <releaseNotes>First version.</releaseNotes>
+  <copyright>Copyright © {Year} {CompanyName}. All rights reserved</copyright>
+  <tags>extension module</tags>
+  <useFullTypeNameInSwagger>false</useFullTypeNameInSwagger>
 </module>
