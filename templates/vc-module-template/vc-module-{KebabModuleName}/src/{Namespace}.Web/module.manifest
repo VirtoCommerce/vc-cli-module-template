@@ -6,7 +6,7 @@
 
   <platformVersion>{PlatformVersion}</platformVersion>
   <dependencies>
-    <!--<dependency id="VirtoCommerce.Core" version="3.200.4" />-->
+    <!--<dependency id="VirtoCommerce.Core" version="3.211.0" />-->
   </dependencies>
 
   <title>{ModuleTitle}</title>
