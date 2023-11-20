@@ -30,7 +30,7 @@ public static class ModuleConstants
     {
         public static class General
         {
-            public static SettingDescriptor {ModuleName}Enabled { get; } = new SettingDescriptor
+            public static SettingDescriptor {ModuleName}Enabled { get; } = new()
             {
                 Name = "{ModuleName}.{ModuleName}Enabled",
                 GroupName = "{ModuleName}|General",
@@ -38,7 +38,7 @@ public static class ModuleConstants
                 DefaultValue = false,
             };
 
-            public static SettingDescriptor {ModuleName}Password { get; } = new SettingDescriptor
+            public static SettingDescriptor {ModuleName}Password { get; } = new()
             {
                 Name = "{ModuleName}.{ModuleName}Password",
                 GroupName = "{ModuleName}|Advanced",

@@ -1,4 +1,3 @@
-using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -58,9 +57,7 @@ public class Module : IModule, IHasConfiguration
 
         // Register permissions
         var permissionsRegistrar = serviceProvider.GetRequiredService<IPermissionsRegistrar>();
-        permissionsRegistrar.RegisterPermissions(ModuleConstants.Security.Permissions.AllPermissions
-            .Select(x => new Permission { ModuleId = ModuleInfo.Id, GroupName = "{ModuleName}", Name = x })
-            .ToArray());
+        permissionsRegistrar.RegisterPermissions(ModuleInfo.Id, "{ModuleName}", ModuleConstants.Security.Permissions.AllPermissions);
 
         // Apply migrations
         using var serviceScope = serviceProvider.CreateScope();

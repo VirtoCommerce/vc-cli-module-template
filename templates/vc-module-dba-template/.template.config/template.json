@@ -45,12 +45,26 @@
       "replaces": "{ModuleName}",
       "fileRename": "{ModuleName}"
     },
+    "ModuleVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your module version",
+      "defaultValue": "3.400.0",
+      "replaces": "{ModuleVersion}"
+    },
     "PlatformVersion": {
       "type": "parameter",
       "dataType": "string",
       "description": "Required Platform Version",
-      "defaultValue": "3.293.14",
+      "defaultValue": "3.414.13",
       "replaces": "{PlatformVersion}"
+    },
+    "CoreVersion": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Required Core module Version",
+      "defaultValue": "3.400.2",
+      "replaces": "{CoreVersion}"
     },
     "KebabModuleName": {
       "type": "derived",

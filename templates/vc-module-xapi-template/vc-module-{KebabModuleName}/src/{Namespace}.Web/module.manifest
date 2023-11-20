@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module>
   <id>{Namespace}</id>
-  <version>3.200.0</version>
+  <version>{ModuleVersion}</version>
   <version-tag></version-tag>
 
   <platformVersion>{PlatformVersion}</platformVersion>
   <dependencies>
-    <dependency id="VirtoCommerce.ExperienceApi" version="3.301.16" />
+    <dependency id="VirtoCommerce.ExperienceApi" version="{XapiVersion}" />
   </dependencies>
 
   <title>{ModuleTitle}</title>
