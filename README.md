@@ -46,12 +46,15 @@ dotnet new vc-module-xapi --ModuleName QuoteExperienceApi --Author "Jon Doe" --C
 
 ## Parameters description
 
+Default values based on latest [Stable 6 Release](https://www.virtocommerce.org/t/stable-bundle-6-release-notes/643/4)
+
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
 | --Author (or -A) | Your name | string | Optional| John Doe |
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
 | --ModuleName (or -M) | Your module name | string | Optional | newModule |
-| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.264.5 |
+| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.414.13 |
+| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.411.2 |
 
 ## How to uninstall
 
