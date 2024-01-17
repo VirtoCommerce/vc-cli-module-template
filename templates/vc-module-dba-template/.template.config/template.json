@@ -49,21 +49,21 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your module version",
-      "defaultValue": "3.400.0",
+      "defaultValue": "3.800.0",
       "replaces": "{ModuleVersion}"
     },
     "PlatformVersion": {
       "type": "parameter",
       "dataType": "string",
       "description": "Required Platform Version",
-      "defaultValue": "3.414.13",
+      "defaultValue": "3.800.0",
       "replaces": "{PlatformVersion}"
     },
     "CoreVersion": {
       "type": "parameter",
       "dataType": "string",
       "description": "Required Core module Version",
-      "defaultValue": "3.400.2",
+      "defaultValue": "3.800.0",
       "replaces": "{CoreVersion}"
     },
     "KebabModuleName": {

@@ -46,15 +46,15 @@ dotnet new vc-module-xapi --ModuleName QuoteExperienceApi --Author "Jon Doe" --C
 
 ## Parameters description
 
-Default values based on latest [Stable 6 Release](https://www.virtocommerce.org/t/stable-bundle-6-release-notes/643/4)
+Default values based on latest [Stable 8 Release](https://www.virtocommerce.org/t/stable-bundle-6-release-notes/643/4)
 
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
 | --Author (or -A) | Your name | string | Optional| John Doe |
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
 | --ModuleName (or -M) | Your module name | string | Optional | newModule |
-| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.414.13 |
-| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.411.2 |
+| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.800.0 |
+| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.800.0 |
 
 ## How to uninstall
 
@@ -97,7 +97,7 @@ Licensed under the Virto Commerce Open Software License (the "License"); you
 may not use this file except in compliance with the License. You may
 obtain a copy of the License at
 
-[https://virtocommerce.com/opensourcelicense](https://virtocommerce.com/opensourcelicense)
+[https://virtocommerce.com/open-source-license](https://virtocommerce.com/open-source-license)
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

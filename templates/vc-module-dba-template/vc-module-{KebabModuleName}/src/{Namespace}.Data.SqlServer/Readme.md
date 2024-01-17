@@ -1,6 +1,6 @@
 ## Package manager
 ```
-Add-Migration Initial -Context {Namespace}.Data.Repositories.CoreDbContext -Project {Namespace}.Data.SqlServer -StartupProject {Namespace}.Data.SqlServer -OutputDir Migrations -Verbose -Debug
+Add-Migration Initial -Context {Namespace}.Data.Repositories.{ModuleName}DbContext -Project {Namespace}.Data.SqlServer -StartupProject {Namespace}.Data.SqlServer -OutputDir Migrations -Verbose -Debug
 ```
 
 ### Entity Framework Core Commands
