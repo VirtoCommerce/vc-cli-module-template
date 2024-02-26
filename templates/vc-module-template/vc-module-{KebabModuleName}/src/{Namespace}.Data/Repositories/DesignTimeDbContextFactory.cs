@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using {Namespace}.Data.Repositories;
 
-namespace {Namespace}.Data.SqlServer;
+namespace {Namespace}.Data.Repositories;
 
 public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleName}DbContext>
 {
