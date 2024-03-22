@@ -1,9 +1,9 @@
-using EntityFrameworkCore.Triggers;
 using Microsoft.EntityFrameworkCore;
+using VirtoCommerce.Platform.Data.Infrastructure;
 
 namespace {Namespace}.Data.Repositories;
 
-public class {ModuleName}DbContext : DbContextWithTriggers
+public class {ModuleName}DbContext : DbContextBase
 {
     public {ModuleName}DbContext(DbContextOptions<{ModuleName}DbContext> options)
         : base(options)
