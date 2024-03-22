@@ -6,8 +6,8 @@ using VirtoCommerce.Platform.Core.Modularity;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Settings;
 using {Namespace}.Core;
-using {Namespace}.Data.PostgreSql;
 using {Namespace}.Data.MySql;
+using {Namespace}.Data.PostgreSql;
 using {Namespace}.Data.Repositories;
 using {Namespace}.Data.SqlServer;
 

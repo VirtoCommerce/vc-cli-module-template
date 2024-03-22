@@ -6,7 +6,7 @@
     <!-- Project is not a test project -->
     <SonarQubeTestProject>false</SonarQubeTestProject>
   </PropertyGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     <PackageReference Include="VirtoCommerce.Platform.Data" Version="{PlatformVersion}" />
   </ItemGroup>
