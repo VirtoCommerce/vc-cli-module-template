@@ -53,7 +53,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Required Platform Version",
-      "defaultValue": "3.800.0",
+      "defaultValue": "3.825.0",
       "replaces": "{PlatformVersion}"
     },
     "XapiVersion": {
