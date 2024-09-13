@@ -13,7 +13,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleNam
 
         builder.UseNpgsql(
             connectionString,
-            options => options.MigrationsAssembly(GetType().Assembly.GetName().Name));
+            options => options.MigrationsAssembly(typeof(PostgreSqlDataAssemblyMarker).Assembly.GetName().Name));
 
         return new {ModuleName}DbContext(builder.Options);
     }

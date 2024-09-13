@@ -12,7 +12,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleNam
 
         builder.UseSqlServer(
             connectionString,
-            options => options.MigrationsAssembly(GetType().Assembly.GetName().Name));
+            options => options.MigrationsAssembly(typeof(SqlServerDataAssemblyMarker).Assembly.GetName().Name));
 
         return new {ModuleName}DbContext(builder.Options);
     }

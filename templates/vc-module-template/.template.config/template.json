@@ -53,7 +53,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Required Platform Version",
-      "defaultValue": "3.825.0",
+      "defaultValue": "3.832.3",
       "replaces": "{PlatformVersion}"
     },
     "CoreVersion": {

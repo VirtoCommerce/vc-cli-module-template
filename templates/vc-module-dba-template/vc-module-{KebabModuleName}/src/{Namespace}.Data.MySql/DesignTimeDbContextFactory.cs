@@ -14,7 +14,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleNam
         builder.UseMySql(
             connectionString,
             ResolveServerVersion(args, connectionString),
-            options => options.MigrationsAssembly(GetType().Assembly.GetName().Name));
+            options => options.MigrationsAssembly(typeof(MySqlDataAssemblyMarker).Assembly.GetName().Name));
 
         return new {ModuleName}DbContext(builder.Options);
     }

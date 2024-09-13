@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using VirtoCommerce.Platform.Core.Modularity;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Platform.Core.Settings;
+using VirtoCommerce.Platform.Data.SqlServer.Extensions;
 using {Namespace}.Core;
 using {Namespace}.Data.Repositories;
 
@@ -18,10 +19,10 @@ public class Module : IModule, IHasConfiguration
     public void Initialize(IServiceCollection serviceCollection)
     {
         // Initialize database
-        var connectionString = Configuration.GetConnectionString(ModuleInfo.Id) ??
-                               Configuration.GetConnectionString("VirtoCommerce");
+        var connectionString = Configuration.GetConnectionString(ModuleInfo.Id) ?? Configuration.GetConnectionString("VirtoCommerce");
 
-        serviceCollection.AddDbContext<{ModuleName}DbContext>(options => options.UseSqlServer(connectionString));
+        serviceCollection.AddDbContext<{ModuleName}DbContext>(options =>
+            options.UseSqlServerDatabase(connectionString, typeof(SqlServerDataAssemblyMarker), Configuration));
 
         // Override models
         //AbstractTypeFactory<OriginalModel>.OverrideType<OriginalModel, ExtendedModel>().MapToType<ExtendedEntity>();
