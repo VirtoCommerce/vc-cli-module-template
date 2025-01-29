@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>3.805.0</PackageVersion>
+    <PackageVersion>3.806.0</PackageVersion>
     <PackageId>VirtoCommerce.Module.Template</PackageId>
-    <Title>VirtoCommerce Module Templates</Title>
+    <Title>Virto Commerce Module Templates</Title>
     <Authors>VirtoWay</Authors>
-    <Description>Virto Commerce 3.200.x Module Templates.</Description>
+    <Description>Virto Commerce 3.800.x Module Templates.</Description>
     <PackageTags>dotnet-new;templates;VirtoCommerce</PackageTags>
     <TargetFramework>net6.0</TargetFramework>
 
