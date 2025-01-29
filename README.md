@@ -53,7 +53,7 @@ Default values based on latest [Stable 10 Release](https://www.virtocommerce.org
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
 | --ModuleName (or -M) | Your module name | string | Optional | NewModule |
 | --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.876.0 |
-| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.800.0 |
+| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.901.0 |
 
 ## How to uninstall
 
