@@ -3,7 +3,6 @@
 This repository contains `dotnet new` templates for Virto Commerce Modules.
 
 ## Templates
-* vc-module - Creates a new Virto Commerce module.
 * vc-module-dba - Creates a new Virto Commerce module with DB Agnostic support.
 * vc-module-xapi - Creates a new Virto Commerce module with XAPI support.
 
@@ -24,7 +23,7 @@ dotnet new install VirtoCommerce.Module.Template
 * Run command
 
 ```PowerShell
-dotnet new vc-module --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
+dotnet new vc-module-dba --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
 ```
 
 where `--ModuleName` is your module name, `--Author` is your name, and `--CompanyName` is your company name
