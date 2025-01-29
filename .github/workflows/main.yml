@@ -85,7 +85,7 @@ jobs:
           dotnet new -i ./artifacts/${{ env.NUGET_NAME }}
 
       - name: Create new module solution from template
-        run: dotnet new vc-module-dba
+        run: dotnet new vc-module-dba-xapi
 
       - name: New module test build
         run: |
