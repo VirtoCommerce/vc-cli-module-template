@@ -32,18 +32,10 @@ public static class ModuleConstants
         {
             public static SettingDescriptor {ModuleName}Enabled { get; } = new()
             {
-                Name = "{ModuleName}.{ModuleName}Enabled",
+                Name = "{ModuleName}.Enabled",
                 GroupName = "{ModuleName}|General",
                 ValueType = SettingValueType.Boolean,
                 DefaultValue = false,
-            };
-
-            public static SettingDescriptor {ModuleName}Password { get; } = new()
-            {
-                Name = "{ModuleName}.{ModuleName}Password",
-                GroupName = "{ModuleName}|Advanced",
-                ValueType = SettingValueType.SecureString,
-                DefaultValue = "qwerty",
             };
 
             public static IEnumerable<SettingDescriptor> AllGeneralSettings
@@ -51,7 +43,6 @@ public static class ModuleConstants
                 get
                 {
                     yield return {ModuleName}Enabled;
-                    yield return {ModuleName}Password;
                 }
             }
         }

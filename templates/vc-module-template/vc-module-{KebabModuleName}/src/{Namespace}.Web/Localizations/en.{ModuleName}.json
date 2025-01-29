@@ -15,13 +15,9 @@
   },
   "settings": {
     "{ModuleName}": {
-      "{ModuleName}Enabled": {
+      "Enabled": {
         "title": "{ModuleName} Enabled",
         "description": "{ModuleName} Enabled setting"
-      },
-      "{ModuleName}Password": {
-        "title": "{ModuleName} Password",
-        "description": "{ModuleName} Password setting"
       }
     }
   }
