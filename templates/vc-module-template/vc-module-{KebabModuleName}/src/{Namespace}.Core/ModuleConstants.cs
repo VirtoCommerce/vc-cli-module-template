@@ -16,13 +16,13 @@ public static class ModuleConstants
             public const string Delete = "{ModuleName}:delete";
 
             public static string[] AllPermissions { get; } =
-            {
+            [
                 Access,
                 Create,
                 Read,
                 Update,
                 Delete,
-            };
+            ];
         }
     }
 
