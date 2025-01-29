@@ -4,9 +4,8 @@ This repository contains `dotnet new` templates for Virto Commerce Modules.
 
 ## Templates
 * vc-module - Creates a new Virto Commerce module.
-* vc-module-xapi - Creates a new Virto Commerce module with XAPI support.
 * vc-module-dba - Creates a new Virto Commerce module with DB Agnostic support.
-
+* vc-module-xapi - Creates a new Virto Commerce module with XAPI support.
 
 ## Getting Started
 
@@ -34,7 +33,7 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 * You can pass PlatformVersion attribute to create a new module for specific version of Virto Commerce.  
 
 ### How to create a new XAPI module from template
-There is a seprate template named `vc-module-xapi` for an XAPI module.
+There is a separate template named `vc-module-xapi` for an XAPI module.
 
 * Open Windows PowerShell CMD
 * Navigate to your sources folder
@@ -46,14 +45,14 @@ dotnet new vc-module-xapi --ModuleName QuoteExperienceApi --Author "Jon Doe" --C
 
 ## Parameters description
 
-Default values based on latest [Stable 8 Release](https://www.virtocommerce.org/t/stable-bundle-6-release-notes/643/4)
+Default values based on latest [Stable 10 Release](https://www.virtocommerce.org/t/virtos-release-notes-december-2024/747#p-1340-platform-stable-bundle-10httpsgithubcomvirtocommercevc-modulesblobmasterbundlesv10packagejson-1)
 
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
 | --Author (or -A) | Your name | string | Optional| John Doe |
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
-| --ModuleName (or -M) | Your module name | string | Optional | newModule |
-| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.800.0 |
+| --ModuleName (or -M) | Your module name | string | Optional | NewModule |
+| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.876.0 |
 | --XapiVersion (or -X) | XAPI module version | string | Optional | 3.800.0 |
 
 ## How to uninstall
@@ -91,7 +90,7 @@ dotnet new uninstall <full or relative path to the templates directory>
 
 ## License
 
-Copyright (c) Virtosoftware Ltd. All rights reserved.
+Copyright (c) Virto Solutions LTD. All rights reserved.
 
 Licensed under the Virto Commerce Open Software License (the "License"); you
 may not use this file except in compliance with the License. You may

@@ -21,7 +21,7 @@ public class {ModuleName}DbContext : DbContextBase
         base.OnModelCreating(modelBuilder);
 
         //modelBuilder.Entity<{ModuleName}Entity>().ToTable("{ModuleName}").HasKey(x => x.Id);
-        //modelBuilder.Entity<{ModuleName}Entity>().Property(x => x.Id).HasMaxLength(128).ValueGeneratedOnAdd();
+        //modelBuilder.Entity<{ModuleName}Entity>().Property(x => x.Id).HasMaxLength(IdLength).ValueGeneratedOnAdd();
 
         switch (Database.ProviderName)
         {
