@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using VirtoCommerce.Platform.Core.Modularity;
 using VirtoCommerce.Platform.Core.Security;
 using VirtoCommerce.Xapi.Core.Extensions;
+using VirtoCommerce.Xapi.Core.Infrastructure;
 using {Namespace}.Core;
 using {Namespace}.Data;
 
@@ -29,6 +30,8 @@ public class Module : IModule, IHasConfiguration
         {
             builder.AddSchema(serviceCollection, typeof(AssemblyMarker));
         });
+
+        serviceCollection.AddSingleton<ScopedSchemaFactory<AssemblyMarker>>();
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)

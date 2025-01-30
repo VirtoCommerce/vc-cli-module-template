@@ -10,6 +10,7 @@ using VirtoCommerce.Platform.Data.MySql.Extensions;
 using VirtoCommerce.Platform.Data.PostgreSql.Extensions;
 using VirtoCommerce.Platform.Data.SqlServer.Extensions;
 using VirtoCommerce.Xapi.Core.Extensions;
+using VirtoCommerce.Xapi.Core.Infrastructure;
 using {Namespace}.Core;
 using {Namespace}.Data.MySql;
 using {Namespace}.Data.PostgreSql;
@@ -57,6 +58,8 @@ public class Module : IModule, IHasConfiguration
         {
             builder.AddSchema(serviceCollection, typeof(XapiAssemblyMarker));
         });
+
+        serviceCollection.AddSingleton<ScopedSchemaFactory<XapiAssemblyMarker>>();
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)
