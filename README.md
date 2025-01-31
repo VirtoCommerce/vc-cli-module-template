@@ -6,6 +6,7 @@ This repository contains `dotnet new` templates for Virto Commerce Modules.
 * vc-module-dba-xapi - Creates a new Virto Commerce module with DB Agnostic and XAPI support.
 * vc-module-dba - Creates a new Virto Commerce module with DB Agnostic support.
 * vc-module-xapi - Creates a new Virto Commerce module with XAPI support.
+* vc-crud - Creates all classes required for CRUD operations.
 
 ## Getting Started
 
@@ -40,7 +41,7 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 * `vc-module-customer-reviews` folder with module solution will be created
 * You can pass PlatformVersion attribute to create a new module for specific version of Virto Commerce.  
 
-### Parameters description
+#### Parameters description
 
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
@@ -51,6 +52,27 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 | --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.876.0 |
 | --CoreVersion | Virto Commerce Core module version | string | Optional | 3.800.0 |
 | --XapiVersion (or -X) | XAPI module version | string | Optional | 3.901.0 |
+
+### How to create a CRUD classes from template
+
+Run the following command:
+
+```powershell
+dotnet new vc-crud --EntityName FooBar --CompanyName VirtoCommerce --ModuleName CustomerReviews
+```
+
+It will create a folder called `vc-module-customer-reviews` with models, events, and services needed for CRUD operations. The company name and the module name are used to create the namespace for new classes.
+
+> [!NOTE]
+> You can simply copy the most of these files into your module, but you will need to merge new DbContext.cs, Repository.cs, and Module.cs files with existing ones.
+
+#### Parameters description
+
+| Options | Description | Type | Required | Default value |
+|--------|-------------|------|----------|---------------|
+| --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
+| --ModuleName (or -M) | Your module name | string | Optional | NewModule |
+| --EntityName | New entity name (or -E) | string | Optional | FooBar |
 
 ## How to uninstall
 

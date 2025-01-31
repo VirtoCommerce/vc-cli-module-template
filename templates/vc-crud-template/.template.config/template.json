@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VirtoWay",
+  "classifications": [ "ecommerce", "platform", "virtocommerce", "virto", "commerce", "crud" ],
+  "identity": "VirtoCommerce3.CRUD",
+  "name": "Virto Commerce 3.x CRUD Template",
+  "shortName": "vc-crud",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "CompanyName": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your company name",
+      "defaultValue": "VirtoCommerce",
+      "replaces": "{CompanyName}",
+      "fileRename": "{CompanyName}"
+    },
+    "ModuleName": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your module name",
+      "defaultValue": "NewModule",
+      "replaces": "{ModuleName}",
+      "fileRename": "{ModuleName}"
+    },
+    "EntityName": {
+      "type": "parameter",
+      "dataType": "string",
+      "description": "Your model name",
+      "defaultValue": "FooBar",
+      "replaces": "{EntityName}",
+      "fileRename": "{EntityName}"
+    },
+    "KebabModuleName": {
+      "type": "derived",
+      "valueSource": "ModuleName",
+      "valueTransform": "kebab",
+      "replaces": "{KebabModuleName}",
+      "fileRename": "{KebabModuleName}"
+    },
+    "KebabEntityName": {
+      "type": "derived",
+      "valueSource": "EntityName",
+      "valueTransform": "kebab",
+      "replaces": "{KebabEntityName}",
+      "fileRename": "{KebabEntityName}"
+    },
+    "joinedNamespace": {
+      "type": "generated",
+      "generator": "join",
+      "parameters": {
+        "symbols": [
+          {
+            "type": "ref",
+            "value": "CompanyName"
+          },
+          {
+            "type": "ref",
+            "value": "ModuleName"
+          }
+        ],
+        "separator": "."
+      },
+      "fileRename": "{Namespace}",
+      "replaces": "{Namespace}"
+    }
+  },
+  "forms": {
+    "kebab": {
+      "identifier": "kebabCase"
+    }
+  }
+}
