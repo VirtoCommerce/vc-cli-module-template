@@ -53,7 +53,7 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 | --CoreVersion | Virto Commerce Core module version | string | Optional | 3.800.0 |
 | --XapiVersion (or -X) | XAPI module version | string | Optional | 3.901.0 |
 
-### How to create a CRUD classes from template
+### How to create CRUD classes from template
 
 Run the following command:
 
