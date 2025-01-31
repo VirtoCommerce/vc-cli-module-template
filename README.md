@@ -6,7 +6,7 @@ This repository contains `dotnet new` templates for Virto Commerce Modules.
 * vc-module-dba-xapi - Creates a new Virto Commerce module with DB Agnostic and XAPI support.
 * vc-module-dba - Creates a new Virto Commerce module with DB Agnostic support.
 * vc-module-xapi - Creates a new Virto Commerce module with XAPI support.
-* vc-crud - Creates all classes required for CRUD operations.
+* vc-crud - Creates all the classes needed for CRUD operations.
 
 ## Getting Started
 
