@@ -60,7 +60,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Required XAPI module Version",
-      "defaultValue": "3.901.0",
+      "defaultValue": "3.904.0",
       "replaces": "{XapiVersion}"
     },
     "KebabModuleName": {

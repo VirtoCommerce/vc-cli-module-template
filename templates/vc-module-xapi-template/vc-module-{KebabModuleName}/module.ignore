@@ -10,7 +10,7 @@ GraphQL.Server.Ui.GraphiQL.dll
 GraphQL.SystemTextJson.dll
 GraphQLParser.dll
 MediatR.dll
-MediatR.Extensions.Microsoft.DependencyInjection.dll
+MediatR.Contracts.dll
 Microsoft.AI.DependencyCollector.dll
 Microsoft.AI.EventCounterCollector.dll
 Microsoft.AI.PerfCounterCollector.dll

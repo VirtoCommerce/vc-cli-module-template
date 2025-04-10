@@ -6,7 +6,7 @@
 
   <platformVersion>{PlatformVersion}</platformVersion>
   <dependencies>
-    <!--<dependency id="VirtoCommerce.Core" version="{CoreVersion}" />-->
+    <dependency id="VirtoCommerce.Xapi" version="{XapiVersion}" />
   </dependencies>
 
   <title>{ModuleTitle}</title>
