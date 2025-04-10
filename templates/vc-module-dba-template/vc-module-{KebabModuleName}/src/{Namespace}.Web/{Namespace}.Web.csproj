@@ -2,11 +2,20 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <!-- Project is not a test project -->
     <SonarQubeTestProject>false</SonarQubeTestProject>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="dist\**" />
+    <Content Remove="dist\**" />
+    <EmbeddedResource Remove="dist\**" />
+    <None Remove="dist\**" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\{Namespace}.Core\{Namespace}.Core.csproj" />
     <ProjectReference Include="..\{Namespace}.Data\{Namespace}.Data.csproj" />
