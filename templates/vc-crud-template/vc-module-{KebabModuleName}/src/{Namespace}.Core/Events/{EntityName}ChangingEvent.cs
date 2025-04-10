@@ -4,10 +4,5 @@ using {Namespace}.Core.Models;
 
 namespace {Namespace}.Core.Events;
 
-public class {EntityName}ChangingEvent : GenericChangedEntryEvent<{EntityName}>
-{
-    public {EntityName}ChangingEvent(IEnumerable<GenericChangedEntry<{EntityName}>> changedEntries)
-        : base(changedEntries)
-    {
-    }
-}
+public class {EntityName}ChangingEvent(IEnumerable<GenericChangedEntry<{EntityName}>> changedEntries)
+    : GenericChangedEntryEvent<{EntityName}>(changedEntries);

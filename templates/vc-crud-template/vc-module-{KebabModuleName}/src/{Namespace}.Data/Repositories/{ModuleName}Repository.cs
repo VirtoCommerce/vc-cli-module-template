@@ -9,13 +9,10 @@ using {Namespace}.Data.Models;
 
 namespace {Namespace}.Data.Repositories;
 
-public class {ModuleName}Repository : DbContextRepositoryBase<{ModuleName}DbContext>, I{ModuleName}Repository
+public class {ModuleName}Repository({ModuleName}DbContext dbContext, IUnitOfWork unitOfWork = null)
+    : DbContextRepositoryBase<{ModuleName}DbContext>(dbContext, unitOfWork),
+        I{ModuleName}Repository
 {
-    public {ModuleName}Repository({ModuleName}DbContext dbContext, IUnitOfWork unitOfWork = null)
-        : base(dbContext, unitOfWork)
-    {
-    }
-
     public IQueryable<{EntityName}Entity> {EntityName}s => DbContext.Set<{EntityName}Entity>();
 
     public virtual async Task<IList<{EntityName}Entity>> Get{EntityName}sByIdsAsync(IList<string> ids, string responseGroup)

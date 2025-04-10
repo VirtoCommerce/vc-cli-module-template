@@ -1,5 +1,3 @@
 namespace {Namespace}.Data.MySql;
 
-public class MySqlDataAssemblyMarker
-{
-}
+public class MySqlDataAssemblyMarker;

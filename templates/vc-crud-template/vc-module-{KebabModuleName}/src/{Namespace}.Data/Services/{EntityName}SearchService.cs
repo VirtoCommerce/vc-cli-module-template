@@ -13,17 +13,15 @@ using {Namespace}.Data.Repositories;
 
 namespace {Namespace}.Data.Services;
 
-public class {EntityName}SearchService : SearchService<{EntityName}SearchCriteria, {EntityName}SearchResult, {EntityName}, {EntityName}Entity>, I{EntityName}SearchService
+public class {EntityName}SearchService(
+    Func<I{ModuleName}Repository> repositoryFactory,
+    IPlatformMemoryCache platformMemoryCache,
+    I{EntityName}Service crudService,
+    IOptions<CrudOptions> crudOptions)
+    : SearchService<{EntityName}SearchCriteria, {EntityName}SearchResult, {EntityName}, {EntityName}Entity>
+        (repositoryFactory, platformMemoryCache, crudService, crudOptions),
+        I{EntityName}SearchService
 {
-    public {EntityName}SearchService(
-        Func<I{ModuleName}Repository> repositoryFactory,
-        IPlatformMemoryCache platformMemoryCache,
-        I{EntityName}Service crudService,
-        IOptions<CrudOptions> crudOptions)
-        : base(repositoryFactory, platformMemoryCache, crudService, crudOptions)
-    {
-    }
-
     protected override IQueryable<{EntityName}Entity> BuildQuery(IRepository repository, {EntityName}SearchCriteria criteria)
     {
         var query = ((I{ModuleName}Repository)repository).{EntityName}s;

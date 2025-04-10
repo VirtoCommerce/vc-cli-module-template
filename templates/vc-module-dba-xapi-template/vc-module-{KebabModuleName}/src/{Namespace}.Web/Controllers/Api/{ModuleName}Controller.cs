@@ -1,23 +1,23 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using {Namespace}.Core;
+using Permissions = {Namespace}.Core.ModuleConstants.Security.Permissions;
 
-namespace {Namespace}.Web.Controllers.Api
+namespace {Namespace}.Web.Controllers.Api;
+
+[Authorize]
+[Route("api/{KebabModuleName}")]
+public class {ModuleName}Controller : Controller
 {
-    [Route("api/{KebabModuleName}")]
-    public class {ModuleName}Controller : Controller
+    // GET: api/{KebabModuleName}
+    /// <summary>
+    /// Get message
+    /// </summary>
+    /// <remarks>Return "Hello world!" message</remarks>
+    [HttpGet]
+    [Route("")]
+    [Authorize(Permissions.Read)]
+    public ActionResult<string> Get()
     {
-        // GET: api/{KebabModuleName}
-        /// <summary>
-        /// Get message
-        /// </summary>
-        /// <remarks>Return "Hello world!" message</remarks>
-        [HttpGet]
-        [Route("")]
-        [Authorize(ModuleConstants.Security.Permissions.Read)]
-        public ActionResult<string> Get()
-        {
-            return Ok(new { result = "Hello world!" });
-        }
+        return Ok(new { result = "Hello world!" });
     }
 }

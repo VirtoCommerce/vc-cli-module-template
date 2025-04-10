@@ -13,16 +13,14 @@ using {Namespace}.Data.Repositories;
 
 namespace {Namespace}.Data.Services;
 
-public class {EntityName}Service : CrudService<{EntityName}, {EntityName}Entity, {EntityName}ChangingEvent, {EntityName}ChangedEvent>, I{EntityName}Service
+public class {EntityName}Service(
+    Func<I{ModuleName}Repository> repositoryFactory,
+    IPlatformMemoryCache platformMemoryCache,
+    IEventPublisher eventPublisher)
+    : CrudService<{EntityName}, {EntityName}Entity, {EntityName}ChangingEvent, {EntityName}ChangedEvent>
+        (repositoryFactory, platformMemoryCache, eventPublisher),
+        I{EntityName}Service
 {
-    public {EntityName}Service(
-        Func<I{ModuleName}Repository> repositoryFactory,
-        IPlatformMemoryCache platformMemoryCache,
-        IEventPublisher eventPublisher)
-        : base(repositoryFactory, platformMemoryCache, eventPublisher)
-    {
-    }
-
     protected override Task<IList<{EntityName}Entity>> LoadEntities(IRepository repository, IList<string> ids, string responseGroup)
     {
         return ((I{ModuleName}Repository)repository).Get{EntityName}sByIdsAsync(ids, responseGroup);

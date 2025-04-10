@@ -24,7 +24,7 @@ dotnet new install VirtoCommerce.Module.Template
 * Navigate to your sources folder
 * Run one of the following commands depending on the type of module you want to create:
 
-```powershell 
+```powershell
 dotnet new vc-module-dba-xapi --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
 ```
 
@@ -39,7 +39,7 @@ dotnet new vc-module-xapi --ModuleName CustomerReviews --Author "Jon Doe" --Comp
 where `--ModuleName` is your module name, `--Author` is your name, and `--CompanyName` is your company name.
 
 * `vc-module-customer-reviews` folder with module solution will be created
-* You can pass PlatformVersion attribute to create a new module for specific version of Virto Commerce.  
+* You can pass PlatformVersion attribute to create a new module for specific version of Virto Commerce.
 
 #### Parameters description
 

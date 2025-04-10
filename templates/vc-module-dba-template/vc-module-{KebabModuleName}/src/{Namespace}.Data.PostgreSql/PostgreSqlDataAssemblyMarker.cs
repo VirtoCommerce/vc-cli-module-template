@@ -1,5 +1,3 @@
 namespace {Namespace}.Data.PostgreSql;
 
-public class PostgreSqlDataAssemblyMarker
-{
-}
+public class PostgreSqlDataAssemblyMarker;

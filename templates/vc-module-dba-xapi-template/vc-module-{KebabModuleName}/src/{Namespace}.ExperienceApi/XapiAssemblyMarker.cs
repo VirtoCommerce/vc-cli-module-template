@@ -1,5 +1,3 @@
 namespace {Namespace}.ExperienceApi;
 
-public class XapiAssemblyMarker
-{
-}
+public class XapiAssemblyMarker;
