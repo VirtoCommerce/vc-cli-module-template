@@ -1,0 +1,24 @@
+{
+  "{ModuleName}": {
+    "blades": {
+      "hello-world": {
+        "title": "Hello world blade"
+      }
+    }
+  },
+  "permissions": {
+    "{KebabModuleName}:access": "Open {ModuleName} menu",
+    "{KebabModuleName}:create": "Create {ModuleName} related data",
+    "{KebabModuleName}:read": "View {ModuleName} related data",
+    "{KebabModuleName}:update": "Update {ModuleName} related data",
+    "{KebabModuleName}:delete": "Delete {ModuleName} related data"
+  },
+  "settings": {
+    "{ModuleName}": {
+      "Enabled": {
+        "title": "{ModuleName} Enabled",
+        "description": "{ModuleName} Enabled setting"
+      }
+    }
+  }
+}

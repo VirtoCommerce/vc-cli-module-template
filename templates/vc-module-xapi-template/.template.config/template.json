@@ -90,10 +90,6 @@
           {
             "type": "ref",
             "value": "ModuleName"
-          },
-          {
-            "type": "const",
-            "value": "module"
           }
         ],
         "separator": " "

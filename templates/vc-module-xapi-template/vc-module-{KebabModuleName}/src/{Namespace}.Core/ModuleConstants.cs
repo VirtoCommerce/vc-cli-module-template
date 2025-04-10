@@ -6,10 +6,10 @@ public static class ModuleConstants
     {
         public static class Permissions
         {
-            public const string Create = "{ModuleName}:create";
-            public const string Read = "{ModuleName}:read";
-            public const string Update = "{ModuleName}:update";
-            public const string Delete = "{ModuleName}:delete";
+            public const string Create = "{KebabModuleName}:create";
+            public const string Read = "{KebabModuleName}:read";
+            public const string Update = "{KebabModuleName}:update";
+            public const string Delete = "{KebabModuleName}:delete";
 
             public static string[] AllPermissions { get; } =
             [

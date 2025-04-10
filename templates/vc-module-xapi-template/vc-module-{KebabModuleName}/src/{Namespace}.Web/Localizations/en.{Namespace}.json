@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "{KebabModuleName}:create": "Create {ModuleName} related data",
+    "{KebabModuleName}:read": "View {ModuleName} related data",
+    "{KebabModuleName}:update": "Update {ModuleName} related data",
+    "{KebabModuleName}:delete": "Delete {ModuleName} related data"
+  }
+}

@@ -1,5 +1,5 @@
-angular.module('{ModuleName}')
-    .controller('{ModuleName}.helloWorldController', ['$scope', '{ModuleName}.webApi', function ($scope, api) {
+angular.module('{Namespace}')
+    .controller('{Namespace}.helloWorldController', ['$scope', '{Namespace}.webApi', function ($scope, api) {
         var blade = $scope.blade;
         blade.title = '{ModuleName}';
 
