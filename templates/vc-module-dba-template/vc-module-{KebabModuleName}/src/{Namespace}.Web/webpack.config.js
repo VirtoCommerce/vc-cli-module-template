@@ -40,17 +40,17 @@ module.exports = (env, argv) => {
                             options: {
                                 relativeTo: path.resolve(__dirname, './'),
                                 prefix: `Modules/$(${namespace})/`,
-                            }
+                            },
                         },
                         {
                             loader: 'html-loader',
                             options: {
                                 sources: false,
-                            }
-                        }
-                    ]
-                }
-            ]
+                            },
+                        },
+                    ],
+                },
+            ],
         },
         plugins: [
             new CleanWebpackPlugin(),
@@ -64,7 +64,7 @@ module.exports = (env, argv) => {
                 }),
             new MiniCssExtractPlugin({
                 filename: 'style.css',
-            })
-        ]
+            }),
+        ],
     };
 };
