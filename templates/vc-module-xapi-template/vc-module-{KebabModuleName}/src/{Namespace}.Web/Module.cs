@@ -28,10 +28,10 @@ public class Module : IModule, IHasConfiguration
         // Register GraphQL schema
         _ = new GraphQLBuilder(serviceCollection, builder =>
         {
-            builder.AddSchema(serviceCollection, typeof(AssemblyMarker));
+            builder.AddSchema(serviceCollection, typeof(XapiAssemblyMarker));
         });
 
-        serviceCollection.AddSingleton<ScopedSchemaFactory<AssemblyMarker>>();
+        serviceCollection.AddSingleton<ScopedSchemaFactory<XapiAssemblyMarker>>();
     }
 
     public void PostInitialize(IApplicationBuilder appBuilder)
@@ -43,7 +43,7 @@ public class Module : IModule, IHasConfiguration
         permissionsRegistrar.RegisterPermissions(ModuleInfo.Id, "{ModuleName}", ModuleConstants.Security.Permissions.AllPermissions);
 
         // Register partial GraphQL schema
-        appBuilder.UseScopedSchema<AssemblyMarker>("{KebabModuleName}");
+        appBuilder.UseScopedSchema<XapiAssemblyMarker>("{KebabModuleName}");
     }
 
     public void Uninstall()

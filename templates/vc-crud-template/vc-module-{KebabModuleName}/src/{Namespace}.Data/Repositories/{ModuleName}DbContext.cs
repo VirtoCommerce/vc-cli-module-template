@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using VirtoCommerce.Platform.Data.Extensions;
 using VirtoCommerce.Platform.Data.Infrastructure;
 using {Namespace}.Data.Models;
 
@@ -21,8 +22,7 @@ public class {ModuleName}DbContext : DbContextBase
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<{EntityName}Entity>().ToTable("{EntityName}").HasKey(x => x.Id);
-        modelBuilder.Entity<{EntityName}Entity>().Property(x => x.Id).HasMaxLength(IdLength).ValueGeneratedOnAdd();
+        modelBuilder.Entity<FooBarEntity>().ToAuditableEntityTable("FooBar");
 
         switch (Database.ProviderName)
         {

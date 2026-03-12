@@ -5,14 +5,14 @@ Add-Migration Initial -Context {Namespace}.Data.Repositories.{ModuleName}DbConte
 
 ### Entity Framework Core Commands
 ```
-dotnet tool install --global dotnet-ef --version 8.*
+dotnet tool install --global dotnet-ef --version 10.0.1
 ```
 
 **Generate Migrations**
 ```
-dotnet ef migrations add Initial -- "{connection string}"
-dotnet ef migrations add Update1 -- "{connection string}"
-dotnet ef migrations add Update2 -- "{connection string}"
+dotnet ef migrations add Initial
+dotnet ef migrations add Update1
+dotnet ef migrations add Update2
 ```
 etc..
 

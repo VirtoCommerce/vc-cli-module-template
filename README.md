@@ -48,10 +48,10 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 | --Author (or -A) | Your name | string | Optional| John Doe |
 | --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
 | --ModuleName (or -M) | Your module name | string | Optional | NewModule |
-| --ModuleVersion | Your module version | string | Optional | 3.800.0 |
-| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.876.0 |
-| --CoreVersion | Virto Commerce Core module version | string | Optional | 3.800.0 |
-| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.904.0 |
+| --ModuleVersion | Your module version | string | Optional | 3.1000.0 |
+| --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.1007.0 |
+| --CoreVersion | Virto Commerce Core module version | string | Optional | 3.1001.0 |
+| --XapiVersion (or -X) | XAPI module version | string | Optional | 3.1003.0 |
 
 ### How to create CRUD classes from template
 

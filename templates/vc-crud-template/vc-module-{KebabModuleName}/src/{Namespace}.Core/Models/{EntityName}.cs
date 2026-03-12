@@ -5,7 +5,7 @@ namespace {Namespace}.Core.Models;
 
 public class {EntityName} : AuditableEntity, ICloneable
 {
-    public object Clone()
+    public virtual object Clone()
     {
         return MemberwiseClone();
     }

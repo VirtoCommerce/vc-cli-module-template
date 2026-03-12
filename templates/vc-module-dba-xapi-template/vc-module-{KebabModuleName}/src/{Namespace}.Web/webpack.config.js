@@ -60,7 +60,7 @@ module.exports = (env, argv) => {
                     filename: '[file].map[query]',
                 }) :
                 new webpack.SourceMapDevToolPlugin({
-                    namespace: namespace
+                    namespace: namespace,
                 }),
             new MiniCssExtractPlugin({
                 filename: 'style.css',
