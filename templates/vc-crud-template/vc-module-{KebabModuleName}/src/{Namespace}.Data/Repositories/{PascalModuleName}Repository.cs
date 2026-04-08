@@ -9,9 +9,9 @@ using {Namespace}.Data.Models;
 
 namespace {Namespace}.Data.Repositories;
 
-public class {ModuleName}Repository({ModuleName}DbContext dbContext, IUnitOfWork unitOfWork = null)
-    : DbContextRepositoryBase<{ModuleName}DbContext>(dbContext, unitOfWork),
-        I{ModuleName}Repository
+public class {PascalModuleName}Repository({PascalModuleName}DbContext dbContext, IUnitOfWork unitOfWork = null)
+    : DbContextRepositoryBase<{PascalModuleName}DbContext>(dbContext, unitOfWork),
+        I{PascalModuleName}Repository
 {
     public IQueryable<{EntityName}Entity> {EntityName}s => DbContext.Set<{EntityName}Entity>();
 

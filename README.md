@@ -25,18 +25,18 @@ dotnet new install VirtoCommerce.Module.Template
 * Run one of the following commands depending on the type of module you want to create:
 
 ```powershell
-dotnet new vc-module-dba-xapi --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
+dotnet new vc-module-dba --ModuleName "Customer Reviews" --CompanyName "Virto Commerce"
 ```
 
 ```powershell
-dotnet new vc-module-dba --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
+dotnet new vc-module-dba-xapi --ModuleName "Customer Reviews" --CompanyName "Virto Commerce"
 ```
 
 ```powershell
-dotnet new vc-module-xapi --ModuleName CustomerReviews --Author "Jon Doe" --CompanyName VirtoCommerce
+dotnet new vc-module-xapi --ModuleName "Customer Reviews" --CompanyName "Virto Commerce"
 ```
 
-where `--ModuleName` is your module name, `--Author` is your name, and `--CompanyName` is your company name.
+where `--ModuleName` is your module name, and `--CompanyName` is your company name.
 
 * `vc-module-customer-reviews` folder with module solution will be created
 * You can pass PlatformVersion attribute to create a new module for specific version of Virto Commerce.
@@ -45,9 +45,9 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
-| --Author (or -A) | Your name | string | Optional| John Doe |
-| --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
-| --ModuleName (or -M) | Your module name | string | Optional | NewModule |
+| --ModuleName (or -M) | Your module name | string | Optional | Foo Bar |
+| --CompanyName (or -C) | Your company name| string | Optional | Virto Commerce |
+| --Author (or -A) | Your name | string | Optional| Virto Commerce |
 | --ModuleVersion | Your module version | string | Optional | 3.1000.0 |
 | --PlatformVersion (or -P) | Virto Commerce platform version | string | Optional | 3.1007.0 |
 | --CoreVersion | Virto Commerce Core module version | string | Optional | 3.1001.0 |
@@ -58,7 +58,7 @@ where `--ModuleName` is your module name, `--Author` is your name, and `--Compan
 Run the following command:
 
 ```powershell
-dotnet new vc-crud --EntityName FooBar --CompanyName VirtoCommerce --ModuleName CustomerReviews
+dotnet new vc-crud --EntityName CustomerReview --ModuleName "Customer Reviews" --CompanyName "Virto Commerce"
 ```
 
 It will create a folder called `vc-module-customer-reviews` with models, events, and services needed for CRUD operations. The company name and the module name are used to create the namespace for new classes.
@@ -70,9 +70,9 @@ It will create a folder called `vc-module-customer-reviews` with models, events,
 
 | Options | Description | Type | Required | Default value |
 |--------|-------------|------|----------|---------------|
-| --CompanyName (or -C) | Your company name| string | Optional | VirtoCommerce |
-| --ModuleName (or -M) | Your module name | string | Optional | NewModule |
-| --EntityName | New entity name (or -E) | string | Optional | FooBar |
+| --CompanyName (or -C) | Your company name| string | Optional | Virto Commerce |
+| --ModuleName (or -M) | Your module name | string | Optional | Foo Bar |
+| --EntityName | New entity name (or -E) | string | Optional | BazQux |
 
 ## How to uninstall
 

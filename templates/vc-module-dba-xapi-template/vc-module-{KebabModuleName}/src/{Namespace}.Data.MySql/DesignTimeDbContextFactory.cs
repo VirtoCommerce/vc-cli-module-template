@@ -4,11 +4,11 @@ using {Namespace}.Data.Repositories;
 
 namespace {Namespace}.Data.MySql;
 
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleName}DbContext>
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{PascalModuleName}DbContext>
 {
-    public {ModuleName}DbContext CreateDbContext(string[] args)
+    public {PascalModuleName}DbContext CreateDbContext(string[] args)
     {
-        var builder = new DbContextOptionsBuilder<{ModuleName}DbContext>();
+        var builder = new DbContextOptionsBuilder<{PascalModuleName}DbContext>();
         var connectionString = args.Length != 0 ? args[0] : "Server=localhost;User=virto;Password=virto;Database=VirtoCommerce3;";
 
         builder.UseMySql(
@@ -16,7 +16,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<{ModuleNam
             ResolveServerVersion(args, connectionString),
             options => options.MigrationsAssembly(typeof(MySqlDataAssemblyMarker).Assembly.GetName().Name));
 
-        return new {ModuleName}DbContext(builder.Options);
+        return new {PascalModuleName}DbContext(builder.Options);
     }
 
     private static ServerVersion ResolveServerVersion(string[] args, string connectionString)

@@ -1,5 +1,5 @@
 {
-  "{ModuleName}": {
+  "{KebabModuleName}": {
     "blades": {
       "hello-world": {
         "title": "Hello world blade"
@@ -14,7 +14,7 @@
     "{KebabModuleName}:delete": "Delete {ModuleName} related data"
   },
   "settings": {
-    "{ModuleName}": {
+    "{PascalModuleName}": {
       "Enabled": {
         "title": "{ModuleName} Enabled",
         "description": "{ModuleName} Enabled setting"

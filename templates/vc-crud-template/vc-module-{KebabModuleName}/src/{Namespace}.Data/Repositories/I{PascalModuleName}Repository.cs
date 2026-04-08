@@ -6,7 +6,7 @@ using {Namespace}.Data.Models;
 
 namespace {Namespace}.Data.Repositories;
 
-public interface I{ModuleName}Repository : IRepository
+public interface I{PascalModuleName}Repository : IRepository
 {
     IQueryable<{EntityName}Entity> {EntityName}s { get; }
 

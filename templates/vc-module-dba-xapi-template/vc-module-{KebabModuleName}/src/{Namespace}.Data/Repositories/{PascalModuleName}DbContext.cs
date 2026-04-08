@@ -5,14 +5,14 @@ using VirtoCommerce.Platform.Data.Infrastructure;
 
 namespace {Namespace}.Data.Repositories;
 
-public class {ModuleName}DbContext : DbContextBase
+public class {PascalModuleName}DbContext : DbContextBase
 {
-    public {ModuleName}DbContext(DbContextOptions<{ModuleName}DbContext> options)
+    public {PascalModuleName}DbContext(DbContextOptions<{PascalModuleName}DbContext> options)
         : base(options)
     {
     }
 
-    protected {ModuleName}DbContext(DbContextOptions options)
+    protected {PascalModuleName}DbContext(DbContextOptions options)
         : base(options)
     {
     }
@@ -21,7 +21,7 @@ public class {ModuleName}DbContext : DbContextBase
     {
         base.OnModelCreating(modelBuilder);
 
-        //modelBuilder.Entity<{ModuleName}Entity>().ToAuditableEntityTable("{ModuleName}");
+        //modelBuilder.Entity<BazQuxEntity>().ToAuditableEntityTable("BazQux");
 
         switch (Database.ProviderName)
         {

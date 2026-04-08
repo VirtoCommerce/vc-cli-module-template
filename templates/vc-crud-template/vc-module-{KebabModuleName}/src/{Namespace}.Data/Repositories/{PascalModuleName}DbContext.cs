@@ -6,14 +6,14 @@ using {Namespace}.Data.Models;
 
 namespace {Namespace}.Data.Repositories;
 
-public class {ModuleName}DbContext : DbContextBase
+public class {PascalModuleName}DbContext : DbContextBase
 {
-    public {ModuleName}DbContext(DbContextOptions<{ModuleName}DbContext> options)
+    public {PascalModuleName}DbContext(DbContextOptions<{PascalModuleName}DbContext> options)
         : base(options)
     {
     }
 
-    protected {ModuleName}DbContext(DbContextOptions options)
+    protected {PascalModuleName}DbContext(DbContextOptions options)
         : base(options)
     {
     }
@@ -22,7 +22,7 @@ public class {ModuleName}DbContext : DbContextBase
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<FooBarEntity>().ToAuditableEntityTable("FooBar");
+        modelBuilder.Entity<{EntityName}Entity>().ToAuditableEntityTable("{EntityName}");
 
         switch (Database.ProviderName)
         {

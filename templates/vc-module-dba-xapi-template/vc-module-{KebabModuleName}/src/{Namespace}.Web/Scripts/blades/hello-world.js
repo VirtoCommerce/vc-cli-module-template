@@ -5,7 +5,7 @@ angular.module('{Namespace}')
 
         blade.refresh = function () {
             api.get(function (data) {
-                blade.title = '{ModuleName}.blades.hello-world.title';
+                blade.title = '{KebabModuleName}.blades.hello-world.title';
                 blade.data = data.result;
                 blade.isLoading = false;
             });

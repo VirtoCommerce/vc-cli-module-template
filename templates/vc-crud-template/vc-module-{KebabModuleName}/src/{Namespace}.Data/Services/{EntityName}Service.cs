@@ -14,7 +14,7 @@ using {Namespace}.Data.Repositories;
 namespace {Namespace}.Data.Services;
 
 public class {EntityName}Service(
-    Func<I{ModuleName}Repository> repositoryFactory,
+    Func<I{PascalModuleName}Repository> repositoryFactory,
     IPlatformMemoryCache platformMemoryCache,
     IEventPublisher eventPublisher)
     : CrudService<{EntityName}, {EntityName}Entity, {EntityName}ChangingEvent, {EntityName}ChangedEvent>
@@ -23,6 +23,6 @@ public class {EntityName}Service(
 {
     protected override Task<IList<{EntityName}Entity>> LoadEntities(IRepository repository, IList<string> ids, string responseGroup)
     {
-        return ((I{ModuleName}Repository)repository).Get{EntityName}sByIdsAsync(ids, responseGroup);
+        return ((I{PascalModuleName}Repository)repository).Get{EntityName}sByIdsAsync(ids, responseGroup);
     }
 }

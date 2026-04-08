@@ -6,7 +6,7 @@ namespace {Namespace}.Web.Controllers.Api;
 
 [Authorize]
 [Route("api/{KebabModuleName}")]
-public class {ModuleName}Controller : Controller
+public class {PascalModuleName}Controller : Controller
 {
     // GET: api/{KebabModuleName}
     /// <summary>

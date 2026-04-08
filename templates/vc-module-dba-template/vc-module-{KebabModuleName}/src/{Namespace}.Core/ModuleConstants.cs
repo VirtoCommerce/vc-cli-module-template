@@ -30,9 +30,9 @@ public static class ModuleConstants
     {
         public static class General
         {
-            public static SettingDescriptor {ModuleName}Enabled { get; } = new()
+            public static SettingDescriptor {PascalModuleName}Enabled { get; } = new()
             {
-                Name = "{ModuleName}.Enabled",
+                Name = "{PascalModuleName}.Enabled",
                 GroupName = "{ModuleName}|General",
                 ValueType = SettingValueType.Boolean,
                 DefaultValue = false,
@@ -42,7 +42,7 @@ public static class ModuleConstants
             {
                 get
                 {
-                    yield return {ModuleName}Enabled;
+                    yield return {PascalModuleName}Enabled;
                 }
             }
         }

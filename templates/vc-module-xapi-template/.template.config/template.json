@@ -24,21 +24,21 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your name",
-      "defaultValue": "John Doe",
+      "defaultValue": "Virto Commerce",
       "replaces": "{Author}"
     },
     "CompanyName": {
       "type": "parameter",
       "dataType": "string",
       "description": "Your company name",
-      "defaultValue": "VirtoCommerce",
+      "defaultValue": "Virto Commerce",
       "replaces": "{CompanyName}"
     },
     "ModuleName": {
       "type": "parameter",
       "dataType": "string",
       "description": "Your module name",
-      "defaultValue": "NewModule",
+      "defaultValue": "Foo Bar",
       "replaces": "{ModuleName}",
       "fileRename": "{ModuleName}"
     },
@@ -62,6 +62,18 @@
       "description": "Required XAPI module Version",
       "defaultValue": "3.1003.0",
       "replaces": "{XapiVersion}"
+    },
+    "PascalCompanyName": {
+      "type": "derived",
+      "valueSource": "CompanyName",
+      "valueTransform": "pascal"
+    },
+    "PascalModuleName": {
+      "type": "derived",
+      "valueSource": "ModuleName",
+      "valueTransform": "pascal",
+      "replaces": "{PascalModuleName}",
+      "fileRename": "{PascalModuleName}"
     },
     "KebabModuleName": {
       "type": "derived",
@@ -103,11 +115,11 @@
         "symbols": [
           {
             "type": "ref",
-            "value": "CompanyName"
+            "value": "PascalCompanyName"
           },
           {
             "type": "ref",
-            "value": "ModuleName"
+            "value": "PascalModuleName"
           }
         ],
         "separator": "."
@@ -119,6 +131,18 @@
   "forms": {
     "kebab": {
       "identifier": "kebabCase"
+    },
+    "title": {
+      "identifier": "titleCase"
+    },
+    "removeSpaces": {
+      "identifier": "replace",
+      "pattern": "\\s",
+      "replacement": ""
+    },
+    "pascal": {
+      "identifier": "chain",
+      "steps": ["title", "removeSpaces"]
     }
   }
 }

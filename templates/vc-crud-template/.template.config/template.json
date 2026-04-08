@@ -14,7 +14,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your company name",
-      "defaultValue": "VirtoCommerce",
+      "defaultValue": "Virto Commerce",
       "replaces": "{CompanyName}",
       "fileRename": "{CompanyName}"
     },
@@ -22,7 +22,7 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your module name",
-      "defaultValue": "NewModule",
+      "defaultValue": "Foo Bar",
       "replaces": "{ModuleName}",
       "fileRename": "{ModuleName}"
     },
@@ -30,9 +30,21 @@
       "type": "parameter",
       "dataType": "string",
       "description": "Your model name",
-      "defaultValue": "FooBar",
+      "defaultValue": "BazQux",
       "replaces": "{EntityName}",
       "fileRename": "{EntityName}"
+    },
+    "PascalCompanyName": {
+      "type": "derived",
+      "valueSource": "CompanyName",
+      "valueTransform": "pascal"
+    },
+    "PascalModuleName": {
+      "type": "derived",
+      "valueSource": "ModuleName",
+      "valueTransform": "pascal",
+      "replaces": "{PascalModuleName}",
+      "fileRename": "{PascalModuleName}"
     },
     "KebabModuleName": {
       "type": "derived",
@@ -55,11 +67,11 @@
         "symbols": [
           {
             "type": "ref",
-            "value": "CompanyName"
+            "value": "PascalCompanyName"
           },
           {
             "type": "ref",
-            "value": "ModuleName"
+            "value": "PascalModuleName"
           }
         ],
         "separator": "."
@@ -71,6 +83,18 @@
   "forms": {
     "kebab": {
       "identifier": "kebabCase"
+    },
+    "title": {
+      "identifier": "titleCase"
+    },
+    "removeSpaces": {
+      "identifier": "replace",
+      "pattern": "\\s",
+      "replacement": ""
+    },
+    "pascal": {
+      "identifier": "chain",
+      "steps": ["title", "removeSpaces"]
     }
   }
 }

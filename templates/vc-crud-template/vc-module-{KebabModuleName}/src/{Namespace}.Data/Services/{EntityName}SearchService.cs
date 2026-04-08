@@ -14,7 +14,7 @@ using {Namespace}.Data.Repositories;
 namespace {Namespace}.Data.Services;
 
 public class {EntityName}SearchService(
-    Func<I{ModuleName}Repository> repositoryFactory,
+    Func<I{PascalModuleName}Repository> repositoryFactory,
     IPlatformMemoryCache platformMemoryCache,
     I{EntityName}Service crudService,
     IOptions<CrudOptions> crudOptions)
@@ -24,7 +24,7 @@ public class {EntityName}SearchService(
 {
     protected override IQueryable<{EntityName}Entity> BuildQuery(IRepository repository, {EntityName}SearchCriteria criteria)
     {
-        var query = ((I{ModuleName}Repository)repository).{EntityName}s;
+        var query = ((I{PascalModuleName}Repository)repository).{EntityName}s;
         return query;
     }
 

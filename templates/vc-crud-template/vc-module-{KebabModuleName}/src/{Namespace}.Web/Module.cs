@@ -26,7 +26,7 @@ public class Module : IModule, IHasConfiguration
 
     public void Initialize(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddDbContext<{ModuleName}DbContext>(options =>
+        serviceCollection.AddDbContext<{PascalModuleName}DbContext>(options =>
         {
             var databaseProvider = Configuration.GetValue("DatabaseProvider", "SqlServer");
             var connectionString = Configuration.GetConnectionString(ModuleInfo.Id) ?? Configuration.GetConnectionString("VirtoCommerce");
@@ -50,8 +50,8 @@ public class Module : IModule, IHasConfiguration
         //AbstractTypeFactory<OriginalEntity>.OverrideType<OriginalEntity, ExtendedEntity>();
 
         // Register services
-        serviceCollection.AddTransient<I{ModuleName}Repository, {ModuleName}Repository>();
-        serviceCollection.AddSingleton<Func<I{ModuleName}Repository>>(provider => () => provider.CreateScope().ServiceProvider.GetRequiredService<I{ModuleName}Repository>());
+        serviceCollection.AddTransient<I{PascalModuleName}Repository, {PascalModuleName}Repository>();
+        serviceCollection.AddSingleton<Func<I{PascalModuleName}Repository>>(provider => () => provider.CreateScope().ServiceProvider.GetRequiredService<I{PascalModuleName}Repository>());
 
         serviceCollection.AddTransient<I{EntityName}Service, {EntityName}Service>();
         serviceCollection.AddTransient<I{EntityName}SearchService, {EntityName}SearchService>();
@@ -71,7 +71,7 @@ public class Module : IModule, IHasConfiguration
 
         // Apply migrations
         using var serviceScope = serviceProvider.CreateScope();
-        using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>();
+        using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{PascalModuleName}DbContext>();
         dbContext.Database.Migrate();
     }
 

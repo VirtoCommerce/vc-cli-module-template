@@ -27,7 +27,7 @@ public class Module : IModule, IHasConfiguration
 
     public void Initialize(IServiceCollection serviceCollection)
     {
-        serviceCollection.AddDbContext<{ModuleName}DbContext>(options =>
+        serviceCollection.AddDbContext<{PascalModuleName}DbContext>(options =>
         {
             var databaseProvider = Configuration.GetValue("DatabaseProvider", "SqlServer");
             var connectionString = Configuration.GetConnectionString(ModuleInfo.Id) ?? Configuration.GetConnectionString("VirtoCommerce");
@@ -79,7 +79,7 @@ public class Module : IModule, IHasConfiguration
 
         // Apply migrations
         using var serviceScope = serviceProvider.CreateScope();
-        using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{ModuleName}DbContext>();
+        using var dbContext = serviceScope.ServiceProvider.GetRequiredService<{PascalModuleName}DbContext>();
         dbContext.Database.Migrate();
     }
 

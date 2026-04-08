@@ -9,7 +9,7 @@ angular.module(moduleName, [])
     .config(['$stateProvider',
         function ($stateProvider) {
             $stateProvider
-                .state('workspace.{ModuleName}State', {
+                .state('workspace.{PascalModuleName}State', {
                     url: '/{KebabModuleName}',
                     templateUrl: '$(Platform)/Scripts/common/templates/home.tpl.html',
                     controller: [
@@ -35,7 +35,7 @@ angular.module(moduleName, [])
                 icon: 'fa fa-cube',
                 title: '{ModuleName}',
                 priority: 100,
-                action: function () { $state.go('workspace.{ModuleName}State'); },
+                action: function () { $state.go('workspace.{PascalModuleName}State'); },
                 permission: '{KebabModuleName}:access',
             };
             mainMenuService.addMenuItem(menuItem);
