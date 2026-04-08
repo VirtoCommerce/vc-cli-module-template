@@ -5,7 +5,7 @@
     <IsPackable>false</IsPackable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SonarQubeTestProject>false</SonarQubeTestProject>
-    <NoWarn>1591</NoWarn>
+    <NoWarn>1591;NU1608</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Content Update="Localizations\**">
