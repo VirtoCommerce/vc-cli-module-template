@@ -89,7 +89,7 @@ jobs:
 
       - name: New module test build
         run: |
-          cd vc-module-new-module
+          cd vc-module-foo-bar
           vc-build Compile
 
       - name: Publish Nuget
