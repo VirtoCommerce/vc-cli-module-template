@@ -129,6 +129,9 @@
     }
   },
   "forms": {
+    "lower": {
+      "identifier": "lowerCaseInvariant"
+    },
     "kebab": {
       "identifier": "kebabCase"
     },
@@ -142,7 +145,7 @@
     },
     "pascal": {
       "identifier": "chain",
-      "steps": ["title", "removeSpaces"]
+      "steps": ["lower", "title", "removeSpaces"]
     }
   }
 }
