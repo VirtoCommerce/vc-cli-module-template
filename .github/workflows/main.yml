@@ -28,12 +28,15 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    # id-token: write lets NuGet/login mint a short-lived OIDC key (Trusted Publishing).
+    permissions:
+      contents: read
+      id-token: write
     env:
       PACKAGE_NAME: 'VirtoCommerce.Module.Template'
       PACKAGE_VERSION: '1.0-alpha.2'
       PROJ_PATH: 'VirtoCommerce.ModuleTemplate.csproj'
       NUGET_NAME: ''
-      NUGET_KEY: ${{ secrets.NUGET_KEY }}
       FORCE_NUGET: 'false'
 
     steps:
@@ -92,8 +95,18 @@ jobs:
           cd vc-module-foo-bar
           vc-build Compile
 
+      # Trusted Publishing: swap the GitHub OIDC token for a ~1h nuget.org key, minted right before push.
+      - name: NuGet login (OIDC -> temp API key)
+        if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && contains( env.FORCE_NUGET, 'true' ) }}
+        id: nuget_login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          # nuget.org user that created the trust policy (shared service account). Hardcoded because
+          # private repos can't read org-level Actions variables in the current plan.
+          user: virto
+
       - name: Publish Nuget
         if: ${{ (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && contains( env.FORCE_NUGET, 'true' ) }}
         run: |
-          dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+          dotnet nuget push ./artifacts/${{ env.NUGET_NAME }} --api-key ${{ steps.nuget_login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
 
